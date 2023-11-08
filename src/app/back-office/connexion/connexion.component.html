@@ -1,0 +1,35 @@
+<div>
+    <div class="container" >
+        <h2><strong>Authentification à l'application</strong></h2>
+        <div class="mb-3 mt-3">
+          <label  class="form-label" >Nom d'utilisateur: </label>
+          <input type="text" id="id01" class="form-control" placeholder="Introduisez votre nom d'utilisateur " #name>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mot de passe:</label>
+          <input type="password" id="id01" class="form-control" placeholder="Introduisez votre mot de passe " #pwd>
+        </div>
+        <button (click)="onauthentifier(name.value,pwd.value)" type="button" class="btn btn-primary">S'authentifier</button>
+        <div class="mt-3" style="background-color:#f1f1f1">
+            <span >Mot de passe oublié ? <a routerLink="/forgetpwd">Changer le mot de passe</a></span>
+        </div>
+</div>
+
+
+
+<!-- <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span> -->
+

@@ -10,6 +10,11 @@ import { ConnexionService } from '../connexion.service';
 })
 export class ConnexionComponent {
   
+  constructor(private router:Router,private connexionService:ConnexionService){}
+  onauthentifier(name:string,pwd:string){
+    this.connexionService.login(name,pwd);
+    this.router.navigate(['/dashboard']);
+  }
 
   
 
