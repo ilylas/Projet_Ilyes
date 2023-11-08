@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    padding-top: 10px;
+    color: black;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    padding: 20px;
+    margin-right: 10px;
+
+  }
+
+  .objectifs-generaux {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+
+  .objectifs-operationnels {
+    background-color: #e9e9e9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .image{
+    background-repeat: no-repeat;
+    background-image: url('https://img.freepik.com/free-photo/blur-nature-green-park-with-bokeh-sun-light-abstract-background-copy-space-travel-adventure-environment-concept-vintage-tone-filter-color-style_1253-1107.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698278400&semt=ais');
+    background-size: cover;
+    padding-bottom: 50px;
+  }

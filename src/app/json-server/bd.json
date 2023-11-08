@@ -1,0 +1,127 @@
+{
+  "activites": [
+    {
+      "id": 1,
+      "titre": "Plantation d'arbres",
+      "image": "assets/planter_un_arbre.jpg",
+      "evaluation": 14,
+      "disponible": true,
+      "date": "2023-11-29T00:00:00.000Z",
+      "details": [
+        {
+          "intervenant": "Karim Ben Salah",
+          "endroit": "Parc de la Ville",
+          "prerequis": "Apportez une pelle"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titre": "Nettoyage de plage",
+      "image": "/assets/eco-plage.jpg",
+      "evaluation": 16,
+      "disponible": true,
+      "date": "2023-12-13T00:00:00.000Z",
+      "details": [
+        {
+          "intervenant": "Marwa Souissi",
+          "endroit": "Zone côtière",
+          "prerequis": "Apportez un seau de nettoyage"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titre": "Journée Mondiale de la faune",
+      "image": "assets/modele-publication-instagram-medias-sociaux-journee-mondiale-animaux_660886-1184.avif",
+      "evaluation": 15,
+      "disponible": false,
+      "date": "2022-08-20T00:00:00.000Z",
+      "details": [
+        {
+          "intervenant": "Dr. Rached",
+          "endroit": "Centre communautaire",
+          "prerequis": "Aucune connaissance préalable requise"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titre": "Campagne de sensibilisation à la pollution",
+      "image": "assets/mddi_littering_mikadopublicis.png",
+      "evaluation": 12,
+      "disponible": true,
+      "date": "2023-12-15T00:00:00.000Z",
+      "details": [
+        {
+          "intervenant": "Sophie Martin",
+          "endroit": "Centre-ville",
+          "prerequis": "Aucune connaissance préalable requise"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titre": "Randonnée écologique en montagne",
+      "image": "assets/randonner-leger-shutterstock_1930841909.webp",
+      "evaluation": 18,
+      "disponible": true,
+      "date": "2024-03-20T00:00:00.000Z",
+      "details": [
+        {
+          "intervenant": "Thomas Durand",
+          "endroit": "Montagnes isolées",
+          "prerequis": "Bonnes chaussures de randonnée et eau potable"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titre": "Atelier de recyclage créatif",
+      "image": "assets/images.jpg",
+      "evaluation": 14,
+      "disponible": false,
+      "date": "2023-09-30T00:00:00.000Z",
+      "details": [
+        {
+          "intervenant": "Céline Dubois",
+          "endroit": "Salle communautaire",
+          "prerequis": "Apportez des matériaux de recyclage"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titre": "Camping éco-friendly en forêt",
+      "image": "assets/téléchargement.jpg",
+      "evaluation": 20,
+      "disponible": true,
+      "date": "2024-05-10T00:00:00.000Z",
+      "details": [
+        {
+          "intervenant": "Pauline Lefebvre",
+          "endroit": "Forêt nationale",
+          "prerequis": "Équipement de camping complet"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "titre": "Atelier de Jardinage Biologique",
+      "image": "assets/3617_212_jardinbio-cd34.jpg",
+      "evaluation": 14.7,
+      "disponible": true,
+      "date": "2023-06-10T10:00:00.000Z",
+      "details": [
+        {
+          "intervenant": "Sarah Martin, experte en jardinage biologique",
+          "endroit": "Jardin biologique serein",
+          "prerequis": "Aucune connaissance préalable requise"
+        }
+      ]
+    },
+    {
+      "id": 46
+    }
+  ]
+}
