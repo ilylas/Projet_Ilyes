@@ -21,16 +21,6 @@ const routes: Routes = [
   {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent},
   {path:'aboutus',title:'aboutus', component:AProposDeNousComponent},
   // {path:'details',title:'details', component:},
-  {path:'connexion',title:'espace administrateur', component:ConnexionComponent},
-  {path:'',redirectTo:'menu',pathMatch:'full'},
-  {path:'user',title:'espace utilisateur', component:UserComponent},
-  {path:'register',title:'register', component:CreercompteComponent},
-  {path:'dashboard',title:'dashboard', component:DashboardComponent,canActivate:[connexionGuard]},
-  {path:'add',title:'add', component:AjouteractiviteComponent,canActivate:[connexionGuard]},
-  {path:'update',title:'update', component:ModifieractiviteComponent,canActivate:[connexionGuard]},
-  {path:'delete',title:'delete', component:SupprimeractiviteComponent,canActivate:[connexionGuard]},
-  {path:'forgetpwd',title:'forgetpwd', component:MotdepasseoublieComponent},
-  {path:'**',title:'erreur', component:ErreurComponent,}
 
 ];
 
