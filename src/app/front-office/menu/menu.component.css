@@ -1,0 +1,69 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.mat-toolbar.green {
+  background-color: green;
+  color: white;
+}
+.actif{
+  font-size: large;
+  color: white;
+}
+ul{
+ text-align: center;
+}
+
+h1{
+  background-color: rgb(59, 186, 63);
+  margin-bottom: 0;
+  padding: 15px;
+  color: white;
+  font-size: 42px;
+  font-family:cursive ;
+}
+a{
+  color: white;
+}
+
+a:hover{
+  color: white;
+}
+
+li{
+  padding: 5px;
+  margin: 10px;
+}
+
+
+
+.user{
+  border: 1px solid black;
+  width: 400px;
+  height: 500px;
+  border-radius: 5px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  background-color: rgb(34, 139, 34);
+  margin: 50px;
+  padding:50px ;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.admin{
+  border: 1px solid black;
+  width: 400px;
+  height: 500px;
+  border-radius: 5px;
+  background-color: rgb(34, 139, 34);
+  margin: 50px;
+  padding:50px ;
+  font-family: 'Open Sans', sans-serif;
+}
+
+div{
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: x-large;
+  text-align: center;
+  justify-content: center;
+}
