@@ -1,0 +1,34 @@
+<h1>Donner l'Id de l'activité à changer</h1>
+
+<label for="ancienid">id de l'activité à modifier:</label>
+<input type="number" id="ancienid" [(ngModel)]="ancienid">
+<h1>Donner les informations sur la nouvelle activités</h1>
+
+<label for="nouvelId">id:</label>
+<input type="number" id="nouvelId" [(ngModel)]="nouvelId">
+
+<label for="titre">titre:</label>
+<input type="text"  [(ngModel)]="nouveauTitre">
+
+<label for="image">image:</label>
+<input type="text"  [(ngModel)]="nouvelleimage">
+
+<label for="eval">evaluation:</label>
+<input type="text"  [(ngModel)]="nouvelleevaluation">
+
+<label for="dispo">disponible:</label>
+<input type="text" [(ngModel)]="dispo">
+
+<label for="date">date:</label>
+<input type="date"  [(ngModel)]="nouvelledate">
+
+<label for="itervenant">intervenant:</label>
+<input type="text"   [(ngModel)]="nouvelintervenant">
+
+<label for="endroit">endroit:</label>
+<input type="text"   [(ngModel)]="nouvelendroit">
+
+<label for="prerequis">prerequis:</label>
+<input type="text"   [(ngModel)]="nouvelprerequis">
+
+<button (click)="onModifier(this.ancienid)">Modifier l'activité d'id {{ancienid}}</button>
