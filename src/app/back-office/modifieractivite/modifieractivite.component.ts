@@ -46,7 +46,8 @@ export class ModifieractiviteComponent {
       let resultat=this.lesactivites.find(elt=>{elt.id==this.ancienid})
     if(resultat!=undefined){
       resultat=nouvelleActivite
-      resultat.id=nouvelleActivite.id
+      resultat.id = this.nouvelId;
+      this.ancienid = this.nouvelId;
     }
     else{
       alert("l'activité à modifier n'existe pas !")
