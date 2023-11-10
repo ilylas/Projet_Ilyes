@@ -1,6 +1,6 @@
 
-<h1 class=" text-center">Espace Administrateur</h1>
-<ul class="nav nav-tabs justify-content-center ">
+<h1 class="text-center">Espace Administrateur</h1>
+<ul class="nav nav-tabs justify-content-center">
     <li class="nav-item btn btn-success">
         <a class="nav-link" routerLinkActive="actif"  routerLink="/add">Ajouter une activité</a>
     </li>
@@ -14,4 +14,13 @@
       <a class="nav-link"  routerLinkActive="actif" routerLink="/register">Créer un compte</a>
   </li>
   </ul>
+
+  <table>
+    <tr colspan='2'><h2>Quelques Informations</h2></tr>
+    <tr>
+        <th >Club liker : </th>
+        <td [ngClass]="{'c1':aimermenu==true,'c2':aimermenu==false}"></td>
+    </tr>
+  </table>
+
   <button class="btn btn-primary" routerLink="/connexion" (click)="logout()">Déconnexion</button>

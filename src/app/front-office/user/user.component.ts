@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActiviteService } from 'src/app/back-office/services/activite.service';
 
 @Component({
   selector: 'app-user',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+
 
 }

@@ -11,6 +11,9 @@ const URL="http://localhost:3000/activites"
 export class ActiviteService {
   lesactivite!:Activite[];
   details!:Details[];
+  nblikes!:number
+  private userHasLiked: boolean = false;
+
   constructor(private http:HttpClient) {}
 
   getActivite():Observable<Activite[]>{
@@ -27,6 +30,36 @@ export class ActiviteService {
 
   addActivite(a:Activite):Observable<Activite>{
     return this.http.post<Activite>(URL,a);
+  }
+
+  getUneActivite(a:Activite):Observable<Activite>{
+    return this.http.get<Activite>(URL)
+  }
+
+  private totalLikes: number = 0;
+
+
+  getTotalLikes(): number {
+    return this.totalLikes;
+  }
+
+  setTotalLikes(likes: number): void {
+    this.totalLikes = likes;
+  }
+
+  incrementLikes(){
+    if(!this.userHasLiked){
+    this.totalLikes++;
+    this.userHasLiked = true;
+    }
+  }
+
+  setUserLiked(){
+    this.userHasLiked = true;
+  }
+
+  hasUserLiked():boolean{
+    return this.userHasLiked;
   }
 
   // nouvelleActivite!:Activite
