@@ -1,0 +1,22 @@
+.container{
+    position: absolute;
+    left: 350px;
+    top:200px;
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 15px;
+    background-color: white;
+
+}
+body{
+    background-image: url('../../../assets/adminimage.jpg');
+    background-size: cover;
+}
+
+img{
+    float: right;
+    width: 8%;
+    height: 80px;
+    margin-top: 0px;
+    image-rendering: optimizeQuality;
+}

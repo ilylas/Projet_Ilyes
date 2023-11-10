@@ -5,24 +5,30 @@ import { Injectable, OnInit } from '@angular/core';
 })
 export class ConnexionService  {
   nom:string='ilyes';
-  mdp:string='123';
+  mdp:string='admin';
+  autentif:boolean=false;
   constructor() {}
 
   public login(name:string,pwd:string):boolean{
     if((this.nom===name)&&(this.mdp===pwd)){
       localStorage.setItem('state','connected');
+      this.autentif=true;
       return true;
     }
     else{
       localStorage.setItem('state','disconnected');
-      alert("Donner votre nom et votre mot de passe")
       return false;
     }
   }
 
-  getnouveaumdp(pwd:string){
+  setnouveaumdp(pwd:string){
     this.mdp=pwd;
   }
+
+  getpwd():string{
+    return this.mdp;
+  }
+
 
   
 }

@@ -12,7 +12,7 @@ export class MotdepasseoublieComponent {
 
   reset(mpdnouveau1:string,mpdnouveau2:string){
     if(mpdnouveau1!=""&&mpdnouveau2!=""&&mpdnouveau1===mpdnouveau2){
-      this.connexionService.getnouveaumdp(mpdnouveau1);
+      this.connexionService.setnouveaumdp(mpdnouveau1);
       alert("Votre mot de passe est changé avec succée");
       this.router.navigate(['/menu ']);
     }
@@ -21,6 +21,9 @@ export class MotdepasseoublieComponent {
     }
     else if(mpdnouveau2==""){
       alert("Veuillez confirmer le nouveau mot de passe")
+    }
+    else if(mpdnouveau1==this.connexionService.getpwd()||mpdnouveau2==this.connexionService.getpwd()){
+      alert("Veuillez donner un mot de passe différent de l'ancien mot de passe !")
     }
     else{
       alert("Veuillez vérifier le nouveau mot de passe")

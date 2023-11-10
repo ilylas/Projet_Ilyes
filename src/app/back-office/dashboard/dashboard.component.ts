@@ -6,21 +6,8 @@ import { ActiviteService } from '../services/activite.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent{
   public logout(){
     localStorage.removeItem('state');
   }
-
-  nblikes:number=0;
-  aimermenu:boolean=false;
-
-  constructor(private activiteService:ActiviteService){}
-
-ngOnInit(): void {
-  this.nblikes = this.activiteService.getTotalLikes();
-  if(this.nblikes==1){
-    this.aimermenu=true
-  }
-}
-
 }

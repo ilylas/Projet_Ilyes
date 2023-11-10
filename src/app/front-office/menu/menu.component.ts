@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit{
     this.nblikes=1;
     }
     else{
-      alert("Vous Pouvez liker ce menu une seule fois \\{^_^}/")
+      alert("Vous avez déja fais un like ! \nMerci \\{^_^}/")
     }
 
 

@@ -21,7 +21,6 @@ export class SupprimeractiviteComponent {
   onsupprimer(id: string) {
     this.activiteService.deleteActivite(Number(id)).subscribe(
       () => {
-        // Vérifiez si lesactivites est défini avant de filtrer
         if (this.lesactivites) {
           this.lesactivites = this.lesactivites.filter(elt => elt.id !== Number(id));
         }
