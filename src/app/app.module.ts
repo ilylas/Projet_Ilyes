@@ -25,6 +25,7 @@ import { ConnexionService } from './back-office/connexion.service';
 import { ConnexionComponent } from './back-office/connexion/connexion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './front-office/user/user.component';
+import { ConsulteractiviteComponent } from './consulteractivite/consulteractivite.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { UserComponent } from './front-office/user/user.component';
     ActivityFilterPipe,
     ConnexionComponent,
     UserComponent,
+    ConsulteractiviteComponent,
     
 
   ],
