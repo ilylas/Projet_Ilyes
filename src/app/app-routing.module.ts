@@ -15,24 +15,25 @@ import { DashboardComponent } from './back-office/dashboard/dashboard.component'
 import { connexionGuard } from './back-office/connexion.guard';
 import { UserComponent } from './front-office/user/user.component';
 import { ConsulteractiviteComponent } from './back-office/consulteractivite/consulteractivite.component';
+import { DetailsComponent } from './front-office/details/details.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},
   {path:'presentation',title:'presenation', component:PresentationComponent},
   {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent},
   {path:'aboutus',title:'aboutus', component:AProposDeNousComponent},
-  // {path:'details',title:'details', component:},
   {path:'connexion',title:'espace administrateur', component:ConnexionComponent},
   {path:'',redirectTo:'menu',pathMatch:'full'},
   {path:'user',title:'espace utilisateur', component:UserComponent},
   {path:'register',title:'register', component:CreercompteComponent},
+  {path:'details',title:'details', component:DetailsComponent},
   {path:'dashboard',title:'dashboard', component:DashboardComponent,canActivate:[connexionGuard]},
   {path:'add',title:'add', component:AjouteractiviteComponent,canActivate:[connexionGuard]},
   {path:'update',title:'update', component:ModifieractiviteComponent,canActivate:[connexionGuard]},
-  {path:'delete',title:'delete', component:SupprimeractiviteComponent,canActivate:[connexionGuard]},
   {path:'lesactivites',title:'lesactivites', component:ConsulteractiviteComponent,canActivate:[connexionGuard],
 children:[
   {path:'delete',title:'delete', component:SupprimeractiviteComponent,canActivate:[connexionGuard]},
+
 ]
 },
   {path:'forgetpwd',title:'forgetpwd', component:MotdepasseoublieComponent},

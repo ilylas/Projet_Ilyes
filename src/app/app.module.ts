@@ -26,6 +26,7 @@ import { ConnexionComponent } from './back-office/connexion/connexion.component'
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './front-office/user/user.component';
 import { ConsulteractiviteComponent } from './back-office/consulteractivite/consulteractivite.component';
+import { DetailsComponent } from './front-office/details/details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { ConsulteractiviteComponent } from './back-office/consulteractivite/cons
     ConnexionComponent,
     UserComponent,
     ConsulteractiviteComponent,
+    DetailsComponent,
     
 
   ],

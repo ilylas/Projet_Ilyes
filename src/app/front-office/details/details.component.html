@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="list-group">
+        <div *ngFor="let activite of lesactivites" class="list-group-item" >
+            {{activite.titre}}
+            <div [ngClass]="activite.disponible?'c1':'c2'">{{activite.disponible}}</div>
+        </div>
+    </div>
+</div>

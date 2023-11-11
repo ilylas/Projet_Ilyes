@@ -10,10 +10,10 @@ import { Details } from '../classes/details';
 })
 export class ConsulteractiviteComponent {
   searchTerm!:string;
-  constructor(private activiteService:ActiviteService){}
   lesactivites!:Activite[]
   details!:Details[]
 
+  constructor(private activiteService:ActiviteService){}
 
   ngOnInit(){
    this.activiteService.getActivite().subscribe(
