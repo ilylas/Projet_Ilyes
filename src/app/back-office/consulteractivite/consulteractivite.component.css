@@ -1,0 +1,15 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+
+.card-header{
+    margin-top: 10px;
+}
+
+div input{
+    width: 260px;
+    height: 40px;
+    text-align: center;
+    margin-left: 291px;
+}

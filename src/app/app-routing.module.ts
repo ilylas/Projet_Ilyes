@@ -14,6 +14,7 @@ import { PresentationComponent } from './front-office/presentation/presentation.
 import { DashboardComponent } from './back-office/dashboard/dashboard.component';
 import { connexionGuard } from './back-office/connexion.guard';
 import { UserComponent } from './front-office/user/user.component';
+import { ConsulteractiviteComponent } from './back-office/consulteractivite/consulteractivite.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},
@@ -29,6 +30,11 @@ const routes: Routes = [
   {path:'add',title:'add', component:AjouteractiviteComponent,canActivate:[connexionGuard]},
   {path:'update',title:'update', component:ModifieractiviteComponent,canActivate:[connexionGuard]},
   {path:'delete',title:'delete', component:SupprimeractiviteComponent,canActivate:[connexionGuard]},
+  {path:'lesactivites',title:'lesactivites', component:ConsulteractiviteComponent,canActivate:[connexionGuard],
+children:[
+  {path:'delete',title:'delete', component:SupprimeractiviteComponent,canActivate:[connexionGuard]},
+]
+},
   {path:'forgetpwd',title:'forgetpwd', component:MotdepasseoublieComponent},
   {path:'**',title:'erreur', component:ErreurComponent,}
 
