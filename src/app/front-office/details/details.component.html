@@ -1,20 +1,19 @@
 <div class="container">
     <div class="list-group">
         <h1 class="list-group-header text-center">
-            Quelques Informations sur chaque activitée
+            Quelques Informations sur l'activitée : <div class="mt-4">{{activite.titre}}</div> 
         </h1>
-        <table>
-        <div *ngFor="let activite of lesactivites" class="list-group-item text-center" >
-            <tr>
-                <th colspan='3'>{{activite.titre}}</th>
-            </tr>
-            <tr>
-                <td>Disponibilité : <div class="" [ngClass]="activite.disponible?'c1':'c2'"> </div> </td>    
-                <td>Nombre de likes : </td>    
-                <!-- <td>Disponibilité : <div class="text-center" [ngClass]="activite.disponible?'c1':'c2'"> </div> </td>     -->
-            
-            </tr>
+        <div class="text-center card">
+            <div class="card-header">
+                <h2>Date prévue pour l'activité:</h2><div>{{activite.date|date:'dd/MM/YYYY'}}</div>
+            </div>
+            <div class="card-body">
+                <h2>Disponibilité : <div class="align-photo" [ngClass]="activite.disponible?'c1':'c2'"> </div> </h2>    
+                <h2>Nombre de likes : </h2>
+            </div>
+            <div class="card-footer">
+                <h2>Bonjour</h2>
+            </div>                
         </div>
-        </table>
     </div>
 </div>

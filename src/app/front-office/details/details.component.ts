@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Activite } from 'src/app/back-office/classes/activite';
 import { ActiviteService } from 'src/app/back-office/services/activite.service';
 
@@ -9,13 +10,15 @@ import { ActiviteService } from 'src/app/back-office/services/activite.service';
 })
 export class DetailsComponent implements OnInit {
   lesactivites!:Activite[];
-
-  constructor(private activiteService:ActiviteService){}
+  identifiant!:number
+  activite!:Activite
+  constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
 
   ngOnInit(){
-    this.activiteService.getActivite().subscribe(
-       data=>{
-         this.lesactivites=data
+    this.identifiant=this.activatedRoute.snapshot.params['id']
+    this.activiteService.getUneActivite(this.identifiant).subscribe(
+       (data)=>{
+         this.activite=data
        }
      )
    }

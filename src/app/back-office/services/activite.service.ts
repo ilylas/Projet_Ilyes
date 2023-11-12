@@ -32,12 +32,11 @@ export class ActiviteService {
     return this.http.post<Activite>(URL,a);
   }
 
-  getUneActivite(a:Activite):Observable<Activite>{
-    return this.http.get<Activite>(URL)
+  getUneActivite(id:number):Observable<Activite>{
+    return this.http.get<Activite>(URL+"/"+id)
   }
 
-  private totalLikes: number = 0;
-
+  totalLikes: number = 0;
 
   getTotalLikes(): number {
     return this.totalLikes;

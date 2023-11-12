@@ -15,7 +15,7 @@
           <div class="card-footer" >            
             <div  class="bg bg-dark text-white rounded-pill">Date de l'activitée: {{activite.date|date:'dd-MM-yyyy'}}</div>
           </div> 
-          <button class="badge rounded-pill bg bg-secondary"> <a class="text-white nav-link" routerLink="/details">Consulter l'activité</a> </button>
+          <button class="badge rounded-pill bg bg-secondary"> <a class="text-white nav-link" [routerLink]="['/details',activite.id]">Consulter l'activité</a> </button>
           <app-supprimeractivite  [activite]="activite" (onSupprimerEvent)="onsupprimer($event)"></app-supprimeractivite>
           <button class="badge rounded-pill bg bg-success" [routerLink]="['/update',activite.id]">Modifier cette activité</button>
         </div>
