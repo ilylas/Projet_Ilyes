@@ -119,6 +119,13 @@
           "prerequis": "Aucune connaissance préalable requise"
         }
       ]
+    },
+    {
+      "id": 45,
+      "titre": "erty",
+      "details": [
+        {}
+      ]
     }
   ]
 }

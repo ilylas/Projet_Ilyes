@@ -30,11 +30,11 @@ const routes: Routes = [
   {path:'details',title:'details', component:DetailsComponent},
   {path:'dashboard',title:'dashboard', component:DashboardComponent,canActivate:[connexionGuard]},
   {path:'add',title:'add', component:AjouteractiviteComponent,canActivate:[connexionGuard]},
+  {path:'update/:id',title:'uptatedactivity', component:ActiviteAModifierComponent,canActivate:[connexionGuard]},
   {path:'update',title:'update', component:ModifieractiviteComponent,canActivate:[connexionGuard]},
   {path:'lesactivites',title:'lesactivites', component:ConsulteractiviteComponent,canActivate:[connexionGuard],
 children:[
   {path:'delete',title:'delete', component:SupprimeractiviteComponent,canActivate:[connexionGuard]},
-  {path:'update/:id',title:'uptatedactivity', component:ActiviteAModifierComponent,canActivate:[connexionGuard]},
 
 
 ]
