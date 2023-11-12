@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConnexionService } from '../connexion.service';
 
@@ -8,7 +8,7 @@ import { ConnexionService } from '../connexion.service';
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.css']
 })
-export class ConnexionComponent {
+export class ConnexionComponent{
 
   nbtentatives:number=3;
   
@@ -19,22 +19,17 @@ export class ConnexionComponent {
     if(name==""||pwd==""){
       alert('Veuillez entrer vos données de connexion !');
     }
-    if(this.connexionService.autentif){
+    if(!this.connexionService.autentif){
+      this.nbtentatives--;
+      alert('Vous avez entrer des données incorrects .\nVous avez encore '+this.nbtentatives+' tentatives !');
+    }
+    else{
       this.router.navigate(['/dashboard']);
     }
-    else if(name!=""&&pwd!=""){
-      this.nbtentatives--;
-      alert('Vous avez entrer un mot de passe incorrect .\n Vous avez encore '+this.nbtentatives+' tentatives !');
-    } 
     if(this.nbtentatives==0){
       alert('le nombres maximale de tentatives est atteint !');
       this.router.navigate(['/forgetpwd']);
     }
   }
-
-  
-
-
-
 }
 
