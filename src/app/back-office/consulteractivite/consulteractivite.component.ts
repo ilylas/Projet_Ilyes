@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Activite } from '../classes/activite';
 import { ActiviteService } from '../services/activite.service';
 import { Details } from '../classes/details';
@@ -8,7 +8,7 @@ import { Details } from '../classes/details';
   templateUrl: './consulteractivite.component.html',
   styleUrls: ['./consulteractivite.component.css']
 })
-export class ConsulteractiviteComponent {
+export class ConsulteractiviteComponent implements OnInit {
   searchTerm!:string;
   lesactivites!:Activite[]
   details!:Details[]
