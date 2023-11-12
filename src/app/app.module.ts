@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './front-office/user/user.component';
 import { ConsulteractiviteComponent } from './back-office/consulteractivite/consulteractivite.component';
 import { DetailsComponent } from './front-office/details/details.component';
+import { ActiviteAModifierComponent } from './activite-a-modifier/activite-a-modifier.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { DetailsComponent } from './front-office/details/details.component';
     UserComponent,
     ConsulteractiviteComponent,
     DetailsComponent,
+    ActiviteAModifierComponent,
     
 
   ],

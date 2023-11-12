@@ -17,6 +17,7 @@
           </div> 
           <button class="badge rounded-pill bg bg-secondary"> <a class="text-white nav-link" routerLink="/details">Consulter l'activité</a> </button>
           <app-supprimeractivite  [activite]="activite" (onSupprimerEvent)="onsupprimer($event)"></app-supprimeractivite>
+          <button class="badge rounded-pill bg bg-success" [routerLink]="['/update',activite.id]">Modifier cette activité</button>
         </div>
     </div>
 </div>

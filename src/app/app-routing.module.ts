@@ -16,6 +16,7 @@ import { connexionGuard } from './back-office/connexion.guard';
 import { UserComponent } from './front-office/user/user.component';
 import { ConsulteractiviteComponent } from './back-office/consulteractivite/consulteractivite.component';
 import { DetailsComponent } from './front-office/details/details.component';
+import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/activite-a-modifier.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},
@@ -33,6 +34,8 @@ const routes: Routes = [
   {path:'lesactivites',title:'lesactivites', component:ConsulteractiviteComponent,canActivate:[connexionGuard],
 children:[
   {path:'delete',title:'delete', component:SupprimeractiviteComponent,canActivate:[connexionGuard]},
+  {path:'update/:id',title:'uptatedactivity', component:ActiviteAModifierComponent,canActivate:[connexionGuard]},
+
 
 ]
 },

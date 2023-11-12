@@ -12,7 +12,6 @@ export class SupprimeractiviteComponent {
   @Output() onSupprimerEvent= new EventEmitter<number>();
   @Input() activite!: Activite;
 
-  constructor(private activiteService:ActiviteService){}
 
   // version 1
   onsupprimer(id:number){ 
@@ -21,11 +20,12 @@ export class SupprimeractiviteComponent {
   }
   
   // version 2
-  onsupprimerv2(id:string){
-    this.activiteService.deleteActivite(Number(id)).subscribe(
-      ()=>this.lesactivites=this.lesactivites.filter(elt=>elt.id!=Number(id))
-    )
-  }
+  // constructor(private activiteService:ActiviteService){}
+  // onsupprimerv2(id:string){
+  //   this.activiteService.deleteActivite(Number(id)).subscribe(
+  //     ()=>this.lesactivites=this.lesactivites.filter(elt=>elt.id!=Number(id))
+  //   )
+  // }
   
 }
 
