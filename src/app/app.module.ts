@@ -20,7 +20,7 @@ import { MotdepasseoublieComponent } from './back-office/motdepasseoublie/motdep
 import { SupprimeractiviteComponent } from './back-office/supprimeractivite/supprimeractivite.component';
 import { ActivityFilterPipe } from './front-office/listeactivites/activity-filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConnexionService } from './back-office/connexion.service';
 import { ConnexionComponent } from './back-office/connexion/connexion.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,7 +28,7 @@ import { UserComponent } from './front-office/user/user.component';
 import { ConsulteractiviteComponent } from './back-office/consulteractivite/consulteractivite.component';
 import { DetailsComponent } from './front-office/details/details.component';
 import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/activite-a-modifier.component';
-import { CommentaireComponent } from './commentaire/commentaire.component';
+import { CommentaireComponent } from './front-office/commentaire/commentaire.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,11 +62,10 @@ import { CommentaireComponent } from './commentaire/commentaire.component';
     MatButtonModule,
     FormsModule,
     HttpClientModule,
-    MatBadgeModule
+    MatBadgeModule,
+    ReactiveFormsModule
   ],
-  providers: [
-    ConnexionService,
-    ],
+  providers: [ConnexionService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

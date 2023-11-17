@@ -4,7 +4,7 @@
       "id": 1,
       "titre": "Plantation d'arbres",
       "image": "assets/planter_un_arbre.jpg",
-      "nblikes": 20,
+      "nblikes": 24,
       "disponible": true,
       "date": "2023-11-29T00:00:00.000Z",
       "details": [
@@ -119,25 +119,6 @@
           "prerequis": "Aucune connaissance préalable requise"
         }
       ]
-    },
-    {
-      "id": 45,
-      "titre": "ilyes",
-      "image": "sdfg",
-      "nblikes": 1501,
-      "disponible": "true",
-      "date": "2023-11-14",
-      "details": [
-        {}
-      ]
-    },
-    {
-      "id": 12,
-      "titre": "sdf",
-      "details": [
-        {}
-      ],
-      "nblikes": null
     }
   ]
 }
