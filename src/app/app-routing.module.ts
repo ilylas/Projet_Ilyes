@@ -17,11 +17,15 @@ import { UserComponent } from './front-office/user/user.component';
 import { ConsulteractiviteComponent } from './back-office/consulteractivite/consulteractivite.component';
 import { DetailsComponent } from './front-office/details/details.component';
 import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/activite-a-modifier.component';
+import { CommentaireComponent } from './commentaire/commentaire.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},
   {path:'presentation',title:'presenation', component:PresentationComponent},
-  {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent},
+  {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent,
+  children:[
+    {path:'comments',title:'comments', component:CommentaireComponent,canActivate:[connexionGuard]},
+  ]},
   {path:'aboutus',title:'aboutus', component:AProposDeNousComponent},
   {path:'connexion',title:'espace administrateur', component:ConnexionComponent},
   {path:'',redirectTo:'menu',pathMatch:'full'},
