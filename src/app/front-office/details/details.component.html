@@ -5,15 +5,29 @@
         </h1>
         <div class="text-center card">
             <div class="card-header">
-                <h2>Date prévue pour l'activité:</h2><div>{{activite.date|date:'dd/MM/YYYY'}}</div>
+                <h2>Date prévue pour l'activité:</h2><h3>{{activite.date|date:'dd/MM/YYYY'}}</h3>
             </div>
             <div class="card-body">
                 <h2>Disponibilité : <div class="align-photo" [ngClass]="activite.disponible?'c1':'c2'"> </div> </h2>    
-                <h2>Nombre de likes : {{activite.nblikes}}</h2>
+                <h2>Nombre de likes : </h2>
+                <h3>{{activite.nblikes}}</h3>
+                <h2>Club aimé par l'utilisateur :</h2>
+                <h3 class="align-photo" [ngClass]="{'c1':aimermenu==true,'c2':aimermenu==false}"></h3>
             </div>
             <div class="card-footer">
-                <h2>Bonjour</h2>
+                <h2>Commentaires :</h2>
             </div>                
         </div>
     </div>
 </div>
+<!-- <form class="row g-3">
+    <div class="col-md-6">
+      <label  class="form-label">Nom</label>
+      <input type="text" class="form-control" #nom>
+    </div>
+    <div class="col-md-6">
+      <label  class="form-label">Password</label>
+      <input type="password" class="form-control" #pwd>
+    </div>
+</form> -->
+

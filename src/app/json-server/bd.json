@@ -138,45 +138,6 @@
         {}
       ],
       "nblikes": null
-    },
-    {
-      "id": 155,
-      "titre": "laslas",
-      "details": [
-        {}
-      ]
-    },
-    {
-      "id": 444,
-      "details": [
-        {}
-      ],
-      "nblikes": null
-    },
-    {
-      "details": [
-        {}
-      ],
-      "id": 445,
-      "nblikes": null
-    },
-    {
-      "details": [
-        {}
-      ],
-      "id": 446
-    },
-    {
-      "details": [
-        {}
-      ],
-      "id": 447
-    },
-    {
-      "details": [
-        {}
-      ],
-      "id": 448
     }
   ]
 }

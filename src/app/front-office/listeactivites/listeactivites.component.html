@@ -16,6 +16,7 @@
             <div  class="bg bg-dark text-white rounded-pill">Date de l'activitée: {{activite.date|date:'dd-MM-yyyy'}}</div>
           </div> 
           <button class="badge rounded-pill" [ngClass]="activite.disponible?'bg bg-primary':'bg bg-warning'"> <a class="text-white nav-link" [routerLink]="['/details',activite.id]">Details</a> </button>
+          <button class="badge rounded-pill btn btn-success" *ngIf="activite.disponible" routerLink="/register">Demander la participation cette activité</button>
           <button id="likebtn" class="badge rounded-pill btn btn-danger" (click)="aimer(activite)"> j'aime {{activite.nblikes}} <i class="fa-regular fa-heart"></i></button>
       </div>
     

@@ -6,16 +6,6 @@ import { ActiviteService } from 'src/app/back-office/services/activite.service';
   templateUrl: './creercompte.component.html',
   styleUrls: ['./creercompte.component.css']
 })
-export class CreercompteComponent implements OnInit{
-nblikes:number=0;
-aimermenu:boolean=false;
+export class CreercompteComponent {
 
-constructor(private activiteService:ActiviteService){}
-
-ngOnInit(): void {
-  this.nblikes = this.activiteService.getTotalLikes();
-  if(this.nblikes==1){
-    this.aimermenu=true
-  }
-}
 }

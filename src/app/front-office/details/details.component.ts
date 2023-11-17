@@ -13,6 +13,7 @@ export class DetailsComponent implements OnInit {
   identifiant!:number
   activite!:Activite
   nblikes!:number
+  aimermenu:boolean=false;
   constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
 
   ngOnInit(){
@@ -23,7 +24,20 @@ export class DetailsComponent implements OnInit {
        }
      )
     this.activiteService.updatenblikesactivite( this.activite.nblikes);
+    this.nblikes = this.activiteService.getTotalLikes();
+    if(this.nblikes==1){
+      this.aimermenu=true
+    }
    }
+
 }
+
+
+
+
+
+
+
+
 
 
