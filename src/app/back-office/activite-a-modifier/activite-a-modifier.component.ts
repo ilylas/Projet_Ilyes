@@ -14,10 +14,9 @@ export class ActiviteAModifierComponent implements OnInit {
   constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
 
   ancienid!: number;
-  nouvelId!: number;
   nouveauTitre!: string;
   nouvelleimage!: string;
-  nouvelleevaluation!:number;
+  nblikes!:number;
   dispo!:boolean;
   nouvelledate!:Date;
   nouvelintervenant!:string;
@@ -37,21 +36,20 @@ export class ActiviteAModifierComponent implements OnInit {
     prerequis: this.nouvelprerequis
   };
 
-    const nouvelleActivite: Activite = {
-      id: this.nouvelId, 
-      titre: this.nouveauTitre,
-      image: this.nouvelleimage,
-      evaluation: this.nouvelleevaluation,
-      disponible: this.dispo,
-      date:this.nouvelledate,
-      details:[details]
-    };
+    const nouvelleActivite:Activite=new Activite (
+      this.ancienid, 
+      this.nouveauTitre,
+      this.nouvelleimage,
+      this.nblikes,
+      this.dispo,
+      this.nouvelledate,
+      [details]
+   );
     this.activiteService.updateActivite(nouvelleActivite,id).subscribe(
       ()=>{
       let resultat=this.lesactivites.find(elt=>{elt.id==this.ancienid})
     if(resultat!=undefined){
       resultat=nouvelleActivite
-      this.ancienid=nouvelleActivite.id;
     }
     else{
       alert("l'activité à modifier n'existe pas !")

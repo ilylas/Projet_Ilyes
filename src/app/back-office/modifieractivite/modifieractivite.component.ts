@@ -12,11 +12,12 @@ export class ModifieractiviteComponent {
   lesactivites!:Activite[]
   constructor(private activiteService:ActiviteService){}
 
+  
   ancienid!: number;
-  nouvelId!: number;
+  // nouvelId!: number;
   nouveauTitre!: string;
   nouvelleimage!: string;
-  nouvelleevaluation!:number;
+  nouveaunblikes!:number;
   dispo!:boolean;
   nouvelledate!:Date;
   nouvelintervenant!:string;
@@ -25,38 +26,42 @@ export class ModifieractiviteComponent {
 
 
   onModifier(id:number){
+    const details:Details=new Details(
+      this.nouvelintervenant,
+      this.nouvelendroit,
+     this.nouvelprerequis
+    )
+ 
 
-    const details:Details={
-    intervenant: this.nouvelintervenant,
-    endroit: this.nouvelendroit,
-    prerequis: this.nouvelprerequis
-  };
+    const nouvelleActivite:Activite =new Activite  (
+      this.ancienid,
+      this.nouveauTitre,
+      this.nouvelleimage,
+      this.nouveaunblikes,
+      this.dispo,
+      this.nouvelledate,
+      [details]
+    )     
 
-    const nouvelleActivite: Activite = {
-      id: this.nouvelId, 
-      titre: this.nouveauTitre,
-      image: this.nouvelleimage,
-      evaluation: this.nouvelleevaluation,
-      disponible: this.dispo,
-      date:this.nouvelledate,
-      details:[details]
-    };
+    // let I=this.lesactivites.findIndex(elt=>elt.titre==this.nouveauTitre)
     this.activiteService.updateActivite(nouvelleActivite,id).subscribe(
       ()=>{
-      let resultat=this.lesactivites.find(elt=>{elt.id==this.ancienid})
-    if(resultat!=undefined){
-      resultat=nouvelleActivite
-      resultat.id = this.nouvelId;
-      this.ancienid = this.nouvelId;
-    }
-    else{
-      alert("l'activité à modifier n'existe pas !")
+        let result=this.lesactivites.find(elt=>elt.id==this.ancienid);
+    if(result!=undefined){
+      result=nouvelleActivite
     }
     }
     )
-
-
+    if(this.ancienid==0){
+      alert("l'activité à modifier nexiste pas !");
+    }
+    else{
+      alert("modification terminée !")
+    }
   }
+
+
+  
 
 
 }

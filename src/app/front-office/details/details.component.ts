@@ -12,6 +12,7 @@ export class DetailsComponent implements OnInit {
   lesactivites!:Activite[];
   identifiant!:number
   activite!:Activite
+  nblikes!:number
   constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
 
   ngOnInit(){
@@ -21,5 +22,8 @@ export class DetailsComponent implements OnInit {
          this.activite=data
        }
      )
+    this.activiteService.updatenblikesactivite( this.activite.nblikes);
    }
 }
+
+

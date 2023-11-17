@@ -11,7 +11,9 @@ const URL="http://localhost:3000/activites"
 export class ActiviteService {
   lesactivite!:Activite[];
   details!:Details[];
-  nblikes!:number
+  activite!:Activite;
+  totalLikes:number=0;
+
   private userHasLiked: boolean = false;
 
   constructor(private http:HttpClient) {}
@@ -36,7 +38,11 @@ export class ActiviteService {
     return this.http.get<Activite>(URL+"/"+id)
   }
 
-  totalLikes: number = 0;
+
+  updatenblikesactivite(nblikes:number){
+    return nblikes++;
+  }
+  
 
   getTotalLikes(): number {
     return this.totalLikes;
@@ -52,7 +58,7 @@ export class ActiviteService {
     this.userHasLiked = true;
     }
   }
-
+  
   setUserLiked(){
     this.userHasLiked = true;
   }

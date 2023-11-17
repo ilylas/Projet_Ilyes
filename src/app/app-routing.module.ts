@@ -30,7 +30,7 @@ const routes: Routes = [
   {path:'update/:id',title:'uptatedactivity', component:ActiviteAModifierComponent,canActivate:[connexionGuard]},
   {path:'dashboard',title:'dashboard', component:DashboardComponent,canActivate:[connexionGuard]},
   {path:'add',title:'add', component:AjouteractiviteComponent,canActivate:[connexionGuard]},
-  {path:'details/:id',title:'details', component:DetailsComponent,canActivate:[connexionGuard]},
+  {path:'details/:id',title:'details', component:DetailsComponent},
   {path:'update',title:'update', component:ModifieractiviteComponent,canActivate:[connexionGuard]},
   {path:'lesactivites',title:'lesactivites', component:ConsulteractiviteComponent,canActivate:[connexionGuard],
 children:[

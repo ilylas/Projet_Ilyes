@@ -10,7 +10,9 @@ import { ActiviteService } from 'src/app/back-office/services/activite.service';
 export class ListeactivitesComponent implements OnInit{
   searchTerm!:string;
   constructor(private activiteService:ActiviteService){}
-  lesactivites!:Activite[]
+  lesactivites!:Activite[];
+  nblikes!:number
+  
 
   ngOnInit(){
    this.activiteService.getActivite().subscribe(
@@ -18,6 +20,11 @@ export class ListeactivitesComponent implements OnInit{
         this.lesactivites=data
       }
     )
+  }
+
+  aimer(activite:Activite){
+    activite.nblikes++;
+    this.activiteService.updateActivite(activite,activite.id).subscribe()
   }
 
   // nouvelleactivite=this.activiteService.getnouvelactivite()
@@ -47,25 +54,24 @@ export class ListeactivitesComponent implements OnInit{
   //  this.selectedactivity=this.lesactivites;
 
  
-  /*
-  selectedactivity!:Activite[]
   
-  get SearchTerm():string{
-    return this.searchTerm;
-  }
+  // selectedactivity!:Activite[]
+  
+  // get SearchTerm():string{
+  //   return this.searchTerm;
+  // }
 
-  set SearchTerm(value:string){
-    this.searchTerm=value;
-    this.selectedactivity=this.selectactivity(value)
-  }
+  // set SearchTerm(value:string){
+  //   this.searchTerm=value;
+  //   this.selectedactivity=this.selectactivity(value)
+  // }
 
-  selectactivity(searchactivity:string){
-    return this.lesactivites.filter(elt=>elt.titre.toLowerCase().indexOf(searchactivity.toLowerCase())!==-1)
-  }
+  // selectactivity(searchactivity:string){
+  //   return this.lesactivites.filter(elt=>elt.titre.toLowerCase().indexOf(searchactivity.toLowerCase())!==-1)
+  // }
 
-  constructor(private acticiteService:ActiviteService){}
+  // constructor(private acticiteService:ActiviteService){}
 
-*/
 
 
 }

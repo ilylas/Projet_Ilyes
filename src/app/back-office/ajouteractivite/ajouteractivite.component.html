@@ -2,28 +2,28 @@
 <input type="number" id="nouvelId" [(ngModel)]="nouvelId">
 
 <label for="titre">titre:</label>
-<input type="text"  #titre  [(ngModel)]="nouveauTitre">
+<input type="text"  [(ngModel)]="nouveauTitre">
 
 <label for="image">image:</label>
-<input type="text"  #image  [(ngModel)]="nouvelleimage">
+<input type="text"  [(ngModel)]="nouvelleimage">
 
-<label for="eval">evaluation:</label>
-<input type="text"  #evaluation  [(ngModel)]="nouvelleevaluation">
+<label for="eval">Nb likes:</label>
+<input type="text"   [(ngModel)]="nouveaunblikes">
 
 <label for="dispo">disponible:</label>
-<input type="text" #disponible  [(ngModel)]="dispo">
+<input type="text" >
 
 <label for="date">date:</label>
-<input type="date" #date  [(ngModel)]="nouvelledate">
+<input type="date" [(ngModel)]="nouvelledate">
 
 <label for="itervenant">intervenant:</label>
-<input type="text"  #itervenant  [(ngModel)]="nouvelintervenant">
+<input type="text" [(ngModel)]="nouvelintervenant">
 
 <label for="endroit">endroit:</label>
-<input type="text"  #endroit  [(ngModel)]="nouvelendroit">
+<input type="text"  [(ngModel)]="nouvelendroit">
 
 <label for="prerequis">prerequis:</label>
-<input type="text"  #prerequis  [(ngModel)]="nouvelprerequis">
+<input type="text"  [(ngModel)]="nouvelprerequis">
 
 
  <button (click)="onajouter()">Ajouter une nouvelle activité</button>

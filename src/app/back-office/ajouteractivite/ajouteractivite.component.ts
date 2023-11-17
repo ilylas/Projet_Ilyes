@@ -17,7 +17,7 @@ export class AjouteractiviteComponent {
   nouvelId!: number;
   nouveauTitre!: string;
   nouvelleimage!: string;
-  nouvelleevaluation!:number;
+  nouveaunblikes!:number;
   dispo!:boolean;
   nouvelledate!:Date;
   nouvelintervenant!:string;
@@ -25,27 +25,27 @@ export class AjouteractiviteComponent {
   nouvelprerequis!:string;
 
   onajouter(){
-    const details:Details={
-    intervenant: this.nouvelintervenant,
-    endroit: this.nouvelendroit,
-    prerequis: this.nouvelprerequis
-  };
+    const details=new Details(
+    this.nouvelintervenant,
+    this.nouvelendroit,
+    this.nouvelprerequis
+    );
 
-    const nouvelleActivite: Activite = {
-      id: this.nouvelId, 
-      titre: this.nouveauTitre,
-      image: this.nouvelleimage,
-      evaluation: this.nouvelleevaluation,
-      disponible: this.dispo,
-      date:this.nouvelledate,
-      details:[details]
-    };
+    const nouvelleActivite=new Activite(
+      this.nouvelId, 
+      this.nouveauTitre,
+      this.nouvelleimage,
+       this.nouveaunblikes,
+       this.dispo,
+      this.nouvelledate,
+      [details]
+    );
     this.activiteService.addActivite(nouvelleActivite).subscribe(
       (data)=>{
         this.lesactivites.push(data)
-        this.lesactivites.length++;
       }
     )
+    alert("Ajout effectué avec succees !")
   }
 
 
