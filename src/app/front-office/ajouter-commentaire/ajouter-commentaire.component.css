@@ -1,0 +1,24 @@
+form {
+    max-width: 500px;
+    margin-left:  774px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size:large;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }

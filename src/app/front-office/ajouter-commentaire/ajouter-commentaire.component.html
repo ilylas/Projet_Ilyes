@@ -1,0 +1,13 @@
+
+    <form class="p-2 bg-light rounded text-center">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" #nom>
+
+        <label for="prenom">Prénom:</label>
+        <input type="text" id="prenom" #prenom>
+
+        <label for="msg">Message:</label>
+        <input type="text" id="msg" #msg>
+
+        <input type="button" value="Ajouter" class="btn btn-primary" (click)="onAjouter(nom.value,prenom.value,msg.value)">
+    </form>

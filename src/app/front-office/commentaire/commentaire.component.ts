@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Commentaire } from '../../back-office/classes/commentaire';
-import { ActiviteService } from '../../back-office/services/activite.service';
-import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
+import { Component, Input, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Activite } from 'src/app/back-office/classes/activite';
+import { ActiviteService } from 'src/app/back-office/services/activite.service';
 
 @Component({
   selector: 'app-commentaire',
@@ -9,22 +9,18 @@ import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
   styleUrls: ['./commentaire.component.css']
 })
 export class CommentaireComponent implements OnInit{
+  @Input() activiteId!: number;
+  activite!:Activite;
+  identifiant!:number
+  constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
 
-  activitesForm!:FormGroup;
-
-  constructor(private formBuilder:FormBuilder){}
-
+  
   ngOnInit(){
-    this.activitesForm=this.formBuilder.nonNullable.group({
-      Commentaires:this.formBuilder.array([])
-    })
-  }
-
-  public get lesCommentaires(){
-    return this.activitesForm.get('Commentaires') as FormArray
-  }
-
-  onAjouter(){
-    this.lesCommentaires.push(this.formBuilder.control(''))
+    this.identifiant=this.activatedRoute.snapshot.params['id']
+    this.activiteService.getUneActivite(this.identifiant).subscribe(
+       (data)=>{
+         this.activite=data
+       }
+     )
   }
 }

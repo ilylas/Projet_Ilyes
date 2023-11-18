@@ -3,6 +3,7 @@ import { Activite } from '../classes/activite';
 import { Details } from '../classes/details';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Commentaire } from '../classes/commentaire';
 
 const URL="http://localhost:3000/activites"
 @Injectable({
@@ -65,6 +66,12 @@ export class ActiviteService {
 
   hasUserLiked():boolean{
     return this.userHasLiked;
+  }
+
+
+  addComment(nom:string,prenom:string,message:string){
+    const newComment: Commentaire = { nom, prenom, message };
+    this.activite.comments?.push(newComment);
   }
 
   // nouvelleActivite!:Activite

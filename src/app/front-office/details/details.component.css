@@ -31,3 +31,14 @@ h1{
     font-style: italic;
     text-decoration: underline;
  }
+ .donnees{
+    margin-left: 50px;
+ }
+table,tr,th,td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px;
+}
+table{
+    margin-left: 510px;
+}

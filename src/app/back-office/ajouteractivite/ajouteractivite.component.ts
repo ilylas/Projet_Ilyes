@@ -3,6 +3,9 @@ import { Activite } from '../classes/activite';
 import { ActiviteService } from '../services/activite.service';
 import { Details } from '../classes/details';
 import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Commentaire } from '../classes/commentaire';
 
 @Component({
   selector: 'app-ajouteractivite',
@@ -12,74 +15,63 @@ import { HttpClient } from '@angular/common/http';
 export class AjouteractiviteComponent {
   lesactivites!:Activite[];
 
-  constructor(private activiteService:ActiviteService){}
+  constructor(private activiteService:ActiviteService,private formBuilder:FormBuilder,private router:Router){}
 
-  nouvelId!: number;
-  nouveauTitre!: string;
-  nouvelleimage!: string;
-  nouveaunblikes!:number;
-  dispo!:boolean;
-  nouvelledate!:Date;
-  nouvelintervenant!:string;
-  nouvelendroit!:string;
-  nouvelprerequis!:string;
+  activitesForm!:FormGroup;
+  // activiteId!: number;
+  // nom!:string;
+  // date!:Date;
+  // message!:string;
 
-  onajouter(){
-    const details=new Details(
-    this.nouvelintervenant,
-    this.nouvelendroit,
-    this.nouvelprerequis
-    );
+  
+  ngOnInit(){
+    this.activitesForm=this.formBuilder.nonNullable.group({
+      id:[0],
+      titre:[''],
+      image:[''],
+      nblikes:[0],
+      date:[new Date],
+      disponible:[true],
+      details:this.formBuilder.group({
+        intervenant:[''],
+        endroit:[''],
+        prerequis:['']
+      }),
+      // commentaire:this.formBuilder.array([])
+    })
+   this.activiteService.getActivite().subscribe(
+      data=>{
+        this.lesactivites=data
+      }
+    )
+  }
 
-    const nouvelleActivite=new Activite(
-      this.nouvelId, 
-      this.nouveauTitre,
-      this.nouvelleimage,
-       this.nouveaunblikes,
-       this.dispo,
-      this.nouvelledate,
-      [details]
-    );
-    this.activiteService.addActivite(nouvelleActivite).subscribe(
+  onSubmitForm(){
+    this.activiteService.addActivite(this.activitesForm.value as Activite).subscribe(
       (data)=>{
-        this.lesactivites.push(data)
+        console.log(data)
       }
     )
     alert("Ajout effectué avec succees !")
   }
 
+  onResetForm(){
+    this.activitesForm.reset();
+  }
 
-//   constructor(private activiteService:ActiviteService){
-//     this.lesactivites=this.activiteService.getActivite();
-//   }
+  // public get lesCommentaires(){
+  //   return this.activitesForm.get('commentaire') as FormArray
+  // }
 
-// ajouter() {
-//   const details:Details={
-//     intervenant: this.nouvelintervenant,
-//     endroit: this.nouvelendroit,
-//     prerequis: this.nouvelprerequis};
-//   const nouvelleActivite: Activite = {
-//     id: this.nouvelId, 
-//     titre: this.nouveauTitre,
-//     image: this.nouvelleimage,
-//     evaluation: this.nouvelleevaluation,
-//     disponible: this.dispo,
-//     date:this.nouvelledate,
-//     details:[details]
-//   };
-//   // this.activiteService.ajouterActivite(nouvelleActivite);
-//   this.lesactivites.push(nouvelleActivite);
-// }
+  // onAjouter(){
+  //   this.lesCommentaires.push(this.formBuilder.control(''))
+  // }
 
- 
-//   ajouter(id:string,titre:string,image: string,evaluation:string,disponible: string,date: string,intervenant:string,endroit:string,prerequis:string){
-
-//   let details = new Details(intervenant, endroit, prerequis);
-//   let disponibleBoolean = disponible==='true' ;
-//   let dateObject = new Date(date);
-
-//   this.activiteService.getnouvelactivite(parseInt(id), titre, image,parseInt(evaluation),disponibleBoolean, dateObject, [details]);
-// }
+  // onAjouter(){
+  //   // Implement logic to add a new comment control to the form array
+  //   const commentairesFormArray = this.activitesForm.get('Commentaires') as FormArray;
+  //   commentairesFormArray.push(new FormControl(''));
+  // }
 
 
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Activite } from 'src/app/back-office/classes/activite';
+import { Commentaire } from 'src/app/back-office/classes/commentaire';
 import { ActiviteService } from 'src/app/back-office/services/activite.service';
 
 @Component({
@@ -29,6 +30,9 @@ export class DetailsComponent implements OnInit {
       this.aimermenu=true
     }
    }
+
+
+   
 
 }
 

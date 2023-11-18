@@ -13,21 +13,41 @@
                 <h3>{{activite.nblikes}}</h3>
                 <h2>Club aimé par l'utilisateur :</h2>
                 <h3 class="align-photo" [ngClass]="{'c1':aimermenu==true,'c2':aimermenu==false}"></h3>
+                <h2>les commentaires de cette activitée:</h2>
+                <div class="card-body" *ngFor="let c of activite.comments,index as i">
+                    <label>Commentaire n°</label>{{i+1}}
+                    <table>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Message</th>
+                        </tr>
+                        <tr>
+                            <td>{{c.nom}}</td>
+                            <td>
+                                {{c.prenom}}
+                            </td>
+                            <td>
+                                {{c.message}}
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- <label>Commentaire n°</label>{{i+1}}
+                    <pre>
+                    <label>Nom :</label> 
+                    <input type="text" [value]="c.nom" readonly>
+                    <label>Prenom :</label> 
+                    <input type="text" [value]="c.prenom" readonly>
+                    <label>Commentaire :</label> 
+                    <input type="text" [value]="c.message" readonly> 
+                </pre>-->
+                </div>
             </div>
             <div class="card-footer">
-                <h2>Commentaires :</h2>
+                <h2>Ajouter un commentaire</h2>
+                <router-outlet></router-outlet>
             </div>                
         </div>
     </div>
 </div>
-<!-- <form class="row g-3">
-    <div class="col-md-6">
-      <label  class="form-label">Nom</label>
-      <input type="text" class="form-control" #nom>
-    </div>
-    <div class="col-md-6">
-      <label  class="form-label">Password</label>
-      <input type="password" class="form-control" #pwd>
-    </div>
-</form> -->
 

@@ -4,7 +4,7 @@
       "id": 1,
       "titre": "Plantation d'arbres",
       "image": "assets/planter_un_arbre.jpg",
-      "nblikes": 24,
+      "nblikes": 30,
       "disponible": true,
       "date": "2023-11-29T00:00:00.000Z",
       "details": [
@@ -12,6 +12,28 @@
           "intervenant": "Karim Ben Salah",
           "endroit": "Parc de la Ville",
           "prerequis": "Apportez une pelle"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Aljane ",
+          "prenom": "Ilyes",
+          "message": "dfgdfg"
+        },
+        {
+          "nom": "sd",
+          "prenom": "ze",
+          "message": "szet"
+        },
+        {
+          "nom": "qs",
+          "prenom": "as",
+          "message": "bonjour"
+        },
+        {
+          "nom": "Aljane ",
+          "prenom": "xcv",
+          "message": "bonjour"
         }
       ]
     },
@@ -42,6 +64,13 @@
           "intervenant": "Dr. Rached",
           "endroit": "Centre communautaire",
           "prerequis": "Aucune connaissance préalable requise"
+        }
+      ],
+      "comments": [
+        {
+          "nom": "Aljane ",
+          "prenom": "Ilyes",
+          "message": "activitée superbe"
         }
       ]
     },
@@ -79,7 +108,7 @@
       "id": 6,
       "titre": "Atelier de recyclage créatif",
       "image": "assets/images.jpg",
-      "nblikes": 16,
+      "nblikes": 17,
       "disponible": false,
       "date": "2023-09-30T00:00:00.000Z",
       "details": [
@@ -94,7 +123,7 @@
       "id": 7,
       "titre": "Camping éco-friendly en forêt",
       "image": "assets/téléchargement.jpg",
-      "nblikes": 23,
+      "nblikes": 41,
       "disponible": true,
       "date": "2024-05-10T00:00:00.000Z",
       "details": [
@@ -117,6 +146,35 @@
           "intervenant": "Sarah Martin, experte en jardinage biologique",
           "endroit": "Jardin biologique serein",
           "prerequis": "Aucune connaissance préalable requise"
+        }
+      ]
+    },
+    {
+      "Commentaires": [
+        "sdf"
+      ],
+      "id": 9,
+      "nblikes": 4,
+      "comments": [
+        {
+          "nom": "sdf",
+          "prenom": "xcv",
+          "message": "esr"
+        },
+        {
+          "nom": "Aljane ",
+          "prenom": "Ilyes",
+          "message": "bonjour"
+        },
+        {
+          "nom": "nimp",
+          "prenom": "",
+          "message": ""
+        },
+        {
+          "nom": "",
+          "prenom": "",
+          "message": ""
         }
       ]
     }

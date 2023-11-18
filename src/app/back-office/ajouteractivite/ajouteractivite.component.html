@@ -1,38 +1,40 @@
-<label for="nouvelId">id:</label>
-<input type="number" id="nouvelId" [(ngModel)]="nouvelId">
-
-<label for="titre">titre:</label>
-<input type="text"  [(ngModel)]="nouveauTitre">
-
-<label for="image">image:</label>
-<input type="text"  [(ngModel)]="nouvelleimage">
-
-<label for="eval">Nb likes:</label>
-<input type="text"   [(ngModel)]="nouveaunblikes">
-
-<label for="dispo">disponible:</label>
-<input type="text" >
-
-<label for="date">date:</label>
-<input type="date" [(ngModel)]="nouvelledate">
-
-<label for="itervenant">intervenant:</label>
-<input type="text" [(ngModel)]="nouvelintervenant">
-
-<label for="endroit">endroit:</label>
-<input type="text"  [(ngModel)]="nouvelendroit">
-
-<label for="prerequis">prerequis:</label>
-<input type="text"  [(ngModel)]="nouvelprerequis">
-
-
- <button (click)="onajouter()">Ajouter une nouvelle activité</button>
-
-<!-- <button (click)="ajouter(id.value,titre.value,image.value,evaluation.value,disponible.value,date.value,[itervenant.value,endroit.value,prerequis.value])">Ajouter</button> -->
-
-
-<!-- <button (click)="ajouter(id.value, titre.value, image.value, evaluation.value, disponible.value, date.value, itervenant.value, endroit.value, prerequis.value)">Ajouter</button>
- -->
+<div class="container">
+<form [formGroup]="activitesForm" (ngSubmit)="onSubmitForm()" class="p-2 bg-light rounded text-center">
+    <label for="nouvelId">id</label>
+    <input type="number" id="nouvelId"formControlName="id">
+    <br>
+    <label for="titre">titre</label>
+    <input type="text"  formControlName="titre">
+    <br>
+    <label for="image">image</label>
+    <input type="text"  formControlName="image">
+    <br>
+    <label for="eval">Nb likes</label>
+    <input type="text" formControlName="nblikes">
+    <br>
+    <label for="dispo">disponible</label>
+    <input type="text" formControlName="disponible" >
+    <br>
+    <label for="date">date</label>
+    <input type="date" formControlName="date">
+    <br>
+    <div class="p-2 bg-light rounded" formGroupName="details" >
+        <h2><strong>Details</strong></h2>
+        <br>
+        <label for="itervenant">intervenant</label>
+        <input type="text" formControlName="intervenant">
+        <br>
+        <label for="endroit">endroit</label>
+        <input type="text"  formControlName="endroit">
+        <br>
+        <label for="prerequis">prerequis</label>
+        <input type="text"  formControlName="prerequis">
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Ajouter">
+    <input type="button" class="btn btn-danger" (click)="onResetForm()" value="Effacer">
+</form>
+</div>
 
 
 

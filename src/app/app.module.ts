@@ -29,6 +29,7 @@ import { ConsulteractiviteComponent } from './back-office/consulteractivite/cons
 import { DetailsComponent } from './front-office/details/details.component';
 import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/activite-a-modifier.component';
 import { CommentaireComponent } from './front-office/commentaire/commentaire.component';
+import { AjouterCommentaireComponent } from './front-office/ajouter-commentaire/ajouter-commentaire.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import { CommentaireComponent } from './front-office/commentaire/commentaire.com
     DetailsComponent,
     ActiviteAModifierComponent,
     CommentaireComponent,
+    AjouterCommentaireComponent,
     
 
   ],

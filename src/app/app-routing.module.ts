@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AjouteractiviteComponent } from './back-office/ajouteractivite/ajouteractivite.component';
 import { ConnexionComponent } from './back-office/connexion/connexion.component';
@@ -18,24 +18,27 @@ import { ConsulteractiviteComponent } from './back-office/consulteractivite/cons
 import { DetailsComponent } from './front-office/details/details.component';
 import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/activite-a-modifier.component';
 import { CommentaireComponent } from './front-office/commentaire/commentaire.component';
+import { AjouterCommentaireComponent } from './front-office/ajouter-commentaire/ajouter-commentaire.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},
   {path:'presentation',title:'presenation', component:PresentationComponent},
-  {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent,
-  children:[
-    {path:'comments',title:'comments', component:CommentaireComponent},
-    {path:'register',title:'register', component:CreercompteComponent},
-    {path:'',redirectTo:'comments',pathMatch:'full'},
-  ]},
+  {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent},
   {path:'aboutus',title:'aboutus', component:AProposDeNousComponent},
+  {path:'register',title:'register', component:CreercompteComponent},
   {path:'connexion',title:'espace administrateur', component:ConnexionComponent},
   {path:'',redirectTo:'menu',pathMatch:'full'},
   {path:'user',title:'espace utilisateur', component:UserComponent},
   {path:'update/:id',title:'uptatedactivity', component:ActiviteAModifierComponent,canActivate:[connexionGuard]},
   {path:'dashboard',title:'dashboard', component:DashboardComponent,canActivate:[connexionGuard]},
   {path:'add',title:'add', component:AjouteractiviteComponent,canActivate:[connexionGuard]},
-  {path:'details/:id',title:'details', component:DetailsComponent},
+  {path:'comments/:id',title:'comments', component:CommentaireComponent},
+  {path:'details/:id',title:'details', component:DetailsComponent,  
+  children:[
+    {path:'comments/:id',title:'les commentaires',component:CommentaireComponent},
+    {path:'addcomment/:id',title:'ajouter des commentaires',component:AjouterCommentaireComponent},
+    {path:'',redirectTo:'comments',pathMatch:'full'},
+  ]},
   {path:'update',title:'update', component:ModifieractiviteComponent,canActivate:[connexionGuard]},
   {path:'lesactivites',title:'lesactivites', component:ConsulteractiviteComponent,canActivate:[connexionGuard]},
   {path:'forgetpwd',title:'forgetpwd', component:MotdepasseoublieComponent},
