@@ -11,10 +11,13 @@
     <label class="form-label">Mot de passe:</label>
     <input type="password" id="id01" class="form-control" placeholder="Introduisez votre mot de passe " #pwd>
   </div>
-  <button (click)="onauthentifier(name.value,pwd.value)" type="button" class="btn btn-primary">S'authentifier</button>
+  <button (click)="onauthentifier(name.value,pwd.value)"class="btn btn-primary">S'authentifier</button>
   <div class="mt-3" style="background-color:#f1f1f1">
   <span>Mot de passe oublié ? <a routerLink="/forgetpwd">Changer le mot de passe</a></span>
   </div>
+  <br>
+  <button routerLink="/menu" class="btn btn-secondary">Retourner au menu</button>
+
 </div>
 </body>
 

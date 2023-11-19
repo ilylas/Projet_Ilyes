@@ -12,12 +12,14 @@ import { ActiviteService } from 'src/app/back-office/services/activite.service';
 })
 export class AjouterCommentaireComponent  {
   activite!:Activite;
-
-  constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute,private formBuilder:FormBuilder,private router:Router){}
-
   nom!:string;
   prenom!:string;
   Commentaire!:string;
+  commentaireForm!:FormGroup
+
+  constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute,private formBuilder:FormBuilder,private router:Router){}
+
+
 
 
   ngOnInit() {
@@ -38,7 +40,7 @@ export class AjouterCommentaireComponent  {
         this.activite.comments.push(newComment);
         this.activiteService.updateActivite(this.activite,this.activite.id).subscribe(
           () => {
-            alert("Merci d'avoir commenter cette activitée");
+            alert("Merci d'avoir commenter cette activitée !");
             this.router.navigate(['/listeactivites']);
           }
         )
@@ -46,7 +48,12 @@ export class AjouterCommentaireComponent  {
         else{
           alert("Veuillez remplir les données du commentaire");
         }
+
   }
+
+  onReset(commentaireForm:HTMLFormElement){
+      commentaireForm.reset()
+    }
 
   // ngOnInit(): void {
   //   this.commentaireForm = this.formBuilder.group({

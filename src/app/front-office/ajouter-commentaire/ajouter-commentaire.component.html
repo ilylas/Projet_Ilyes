@@ -1,13 +1,46 @@
+<body>
+<div class="container">
+    <form class="p-2 bg-light rounded text-center" #commentaireForm>
+        <h1>Entrez votre nom et votre prénom ainsi que votre commentaire ici</h1>
 
-    <form class="p-2 bg-light rounded text-center">
         <label for="nom">Nom:</label>
-        <input type="text" id="nom" #nom>
-
+        <input type="text" id="nom" #nom placeholder="donner votre nom...">
+    
         <label for="prenom">Prénom:</label>
-        <input type="text" id="prenom" #prenom>
-
+        <input type="text" id="prenom" #prenom placeholder="donner votre prenom...">
+    
         <label for="msg">Message:</label>
-        <input type="text" id="msg" #msg>
-
-        <input type="button" value="Ajouter" class="btn btn-primary" (click)="onAjouter(nom.value,prenom.value,msg.value)">
+        <input type="text" id="msg" #msg placeholder="donner votre commentaire..."><br>
+    
+        <input type="button" value="Ajouter" class="btn btn-info" (click)="onAjouter(nom.value,prenom.value,msg.value)">
+        <input type="button" value="Annuler" class="btn btn-danger" (click)="onReset(commentaireForm)">
+        
     </form>
+</div>
+</body>
+        <!-- <form [formGroup]="activitesForm" (ngSubmit)="onSubmitForm()">
+        <div formArrayName="Commentaires">
+            <div *ngFor="let pv of lesCommentaires.controls;index as i ">
+                <label>Nom</label>
+                <input type="text" name="name" [(ngModel)]="nom">
+
+                <label>Date</label>
+                <input type="date" name="date" [(ngModel)]="date">
+
+                <label>commentaire n° {{i+1}}</label>
+                <input type="text" class="form-control" [formControlName]="i">
+            </div>
+            <input type="button" value="Ajouter un commentaire" class="btn btn-secondary btn-sm" (click)="onAjouter()"><br>
+        </div>
+        <input type="submit" value="Ajouter">
+    </form> -->
+    <!-- Nom
+    <input type="text" id="nom" #nom>
+
+    prenom
+    <input type="text" id="prenom" #prenom>
+
+    Message
+    <input type="text" id="msg" #msg>
+
+    <input type="button" value="Ajouter" (click)="onajouter(nom.value,prenom.value,msg.value)"> -->

@@ -1,5 +1,6 @@
+<body>
+<div class="container card">
 <h1>Donner l'Id de l'activité à changer</h1>
-
 <label for="ancienid">id de l'activité à modifier:</label>
 <input type="number" id="ancienid" [(ngModel)]="ancienid">
 <h1>Donner les informations sur la nouvelle activités</h1>
@@ -28,4 +29,8 @@
 <label for="prerequis">prerequis:</label>
 <input type="text"   [(ngModel)]="nouvelprerequis">
 
-<button (click)="onModifier(this.ancienid)">Modifier l'activité d'id {{ancienid}}</button>
+<input type="button" class="btn btn-primary" (click)="onModifier(this.ancienid)" value=" Modifier l'activité d'id {{ancienid}}"> 
+<input type="button" class="btn btn-danger" routerLink="/lesactivites" value="Annuler"> 
+
+</div>
+</body>

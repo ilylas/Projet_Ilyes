@@ -45,9 +45,31 @@
             </div>
             <div class="card-footer">
                 <h2>Ajouter un commentaire</h2>
-                <router-outlet></router-outlet>
+                <router-outlet *ngIf=""></router-outlet>
             </div>                
         </div>
     </div>
 </div>
+
+  <!-- <div *ngFor="let c of lesCommentaires">
+    Nom : {{c.nom}}
+    Prenom : {{c.prenom}}
+    Commentaire : {{c.message}}
+  </div> -->
+  
+                <!-- <app-commentaire [activiteId]="activite.id"></app-commentaire> -->
+                <!-- <button class="badge rounded-pill btn btn-infos nav-link" ><a [routerLink]="['/details/',activite.id,'comments']">Afficher les commentaire</a></button> -->
+                <!-- <a [routerLink]="['/details/',activite.id,'comments',activite.id]">Afficher les commentaires de cette activité</a> -->
+            
+
+<!-- <form class="row g-3">
+    <div class="col-md-6">
+      <label  class="form-label">Nom</label>
+      <input type="text" class="form-control" #nom>
+    </div>
+    <div class="col-md-6">
+      <label  class="form-label">Password</label>
+      <input type="password" class="form-control" #pwd>
+    </div>
+</form> -->
 

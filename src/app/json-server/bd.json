@@ -17,21 +17,6 @@
       "comments": [
         {
           "nom": "Aljane ",
-          "prenom": "Ilyes",
-          "message": "dfgdfg"
-        },
-        {
-          "nom": "sd",
-          "prenom": "ze",
-          "message": "szet"
-        },
-        {
-          "nom": "qs",
-          "prenom": "as",
-          "message": "bonjour"
-        },
-        {
-          "nom": "Aljane ",
           "prenom": "xcv",
           "message": "bonjour"
         }
@@ -146,35 +131,6 @@
           "intervenant": "Sarah Martin, experte en jardinage biologique",
           "endroit": "Jardin biologique serein",
           "prerequis": "Aucune connaissance préalable requise"
-        }
-      ]
-    },
-    {
-      "Commentaires": [
-        "sdf"
-      ],
-      "id": 9,
-      "nblikes": 4,
-      "comments": [
-        {
-          "nom": "sdf",
-          "prenom": "xcv",
-          "message": "esr"
-        },
-        {
-          "nom": "Aljane ",
-          "prenom": "Ilyes",
-          "message": "bonjour"
-        },
-        {
-          "nom": "nimp",
-          "prenom": "",
-          "message": ""
-        },
-        {
-          "nom": "",
-          "prenom": "",
-          "message": ""
         }
       ]
     }

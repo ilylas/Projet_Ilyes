@@ -1,10 +1,24 @@
 form {
-    max-width: 500px;
-    margin-left:  774px;
+    border-radius: 8px;
+    background-color: #fff;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    /* margin-top: 1; */
   }
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 100% of the viewport height */
+    background-color: gray; /* Optional background color */
+}
+
+.container {
+    text-align: center;
+}
+
 
   label {
     display: block;
@@ -17,8 +31,13 @@ form {
   input[type="text"],
   input[type="number"],
   input[type="date"] {
-    width: 100%;
+    width: 50%;
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
+  }
+
+  input[type="button"] {
+    padding: 8px;
+    margin: 8px;
   }

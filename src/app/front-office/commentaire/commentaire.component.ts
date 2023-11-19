@@ -1,6 +1,7 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Activite } from 'src/app/back-office/classes/activite';
+import { Commentaire } from 'src/app/back-office/classes/commentaire';
 import { ActiviteService } from 'src/app/back-office/services/activite.service';
 
 @Component({
@@ -9,7 +10,6 @@ import { ActiviteService } from 'src/app/back-office/services/activite.service';
   styleUrls: ['./commentaire.component.css']
 })
 export class CommentaireComponent implements OnInit{
-  @Input() activiteId!: number;
   activite!:Activite;
   identifiant!:number
   constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
@@ -22,5 +22,10 @@ export class CommentaireComponent implements OnInit{
          this.activite=data
        }
      )
+  }
+
+  onsupprimer(c:Commentaire){
+    this.activite.comments=this.activite.comments?.filter(comment=>comment!=c);
+    this.activiteService.updateActivite(this.activite,this.activite.id).subscribe()
   }
 }

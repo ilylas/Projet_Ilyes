@@ -16,9 +16,68 @@
             <div  class="bg bg-dark text-white rounded-pill">Date de l'activitée: {{activite.date|date:'dd-MM-yyyy'}}</div>
           </div> 
           <button class="badge rounded-pill" [ngClass]="activite.disponible?'bg bg-primary':'bg bg-warning'"> <a class="text-white nav-link" [routerLink]="['/details',activite.id]">Details</a> </button>
-          <button class="badge rounded-pill btn btn-success "><a class="text-white nav-link" [routerLink]="['/details/',activite.id,'addcomment',activite.id]">Ajouter un commentaire</a></button>
+          <button class="badge rounded-pill btn btn-success "><a class="text-white nav-link" [routerLink]="['/addcomment',activite.id]">Ajouter un commentaire</a></button>
           <button id="likebtn" class="badge rounded-pill btn btn-danger" (click)="aimer(activite)"> j'aime {{activite.nblikes}} <i class="fa-regular fa-heart"></i></button>
       </div>
     </div>
   </form>
 
+    <!-- <div class="container">
+      <h3>Ajout d'un produit</h3>
+      <form [formGroup]="produitsForm" (ngSubmit)="onSubmitForm()">
+          <div>
+              <label> Identifiant du produit </label>
+              <input type="number" name="id" formControlName="id">
+          </div>
+          <div>
+              <label>Libellé</label>
+              <input type="text" name="lib" formControlName="libelle">
+          </div>
+          <div>
+              <label>Prix</label>
+              <input type="number" name="prix"formControlName="prix" >
+          </div>
+  
+          <div>
+              <label> Made In </label>
+              <label>
+                  <input type="radio" name="madeIn" value="Tunisie"formControlName="madeIn" >Tunisie
+              </label>
+              <label>
+                  <input type="radio" name="madeIn" value="Autre" formControlName="madeIn">Autre
+              </label>
+          </div>
+          <div>
+              <label>Catégorie</label>
+              <select name="selCategories" formControlName="categorie" >
+                  <option *ngFor="let categorie of lescategories" [value]="categorie" >{{categorie}}</option>
+              </select>
+          </div>
+          <div>
+              <label>
+                  <input type="checkbox" name="nouv" formControlName="nouveau"> Nouveau
+              </label>
+          </div>
+          <h5>Definission des points de ventes</h5>
+          <div formArrayName="pointsVente">
+              <div *ngFor="let pv of lesPointsVente.controls;index as i ">
+                  <label>Point de vente n° {{i+1}}</label>
+                  <input type="text" class="form-control" [formControlName]="i">
+              </div>
+          </div>
+          <input type="button" value="Ajouter un point de vente" class="btn btn-secondary btn-sm" (click)="onAjouter()"><br>
+          <input type="submit" value="Ajouter">
+          <input type="button" (click)="onResetForm()" value="Effacer">
+      </form>
+  </div> -->
+    <!-- 
+      <p>Date : {{ activite.date | date:"d/MMMM/YYYY" }}</p>
+    <p>Évaluation : {{ activite.evaluation }}</p>
+    <p>Intéressant : {{ activite.interessant ? 'Oui' : 'Non' }}</p>
+  
+     Boucle pour afficher les détails de l'activité 
+    <ul>
+      <li>Intervenant : {{ activite.details[i].intervenant }}</li>
+      <li>Endroit : {{ activite.details[i].endroit }}</li>
+      <li>Prérequis : {{ activite.details[i].prerequis }}</li>
+    </ul> -->
