@@ -21,3 +21,7 @@ button {
     margin-left:200px ;
     margin-right: 200px;
 }
+
+.button button{
+    margin-left: 20px;
+}

@@ -1,0 +1,35 @@
+<!-- <div *ngIf="data">
+    <h1>Data from API:</h1>
+    <pre>{{ data | json }}</pre>
+  </div> -->
+
+  <!-- <div *ngIf="weatherData">
+    <h1>Weather in {{ weatherData.name }}, {{ weatherData.sys.country }}</h1>
+    <p>Temperature: {{ weatherData.main.temp }} °C</p>
+    <p>Humidity: {{ weatherData.main.humidity }}%</p>
+     Add more details as needed
+  </div> -->
+
+  <div>
+    <h1>Data from API:</h1>
+    <pre class="text-center">
+    <form>
+        <input type="text" name="cityName" placeholder="Donner le nom d'un pays" [(ngModel)]="city" width="700">
+        <button type="button" (click)="getweather()">get weather</button>
+    </form>
+
+
+      <div *ngIf="weatherData">
+        <h2>Le météo dans : {{ weatherData.name }}</h2>
+        <h3>Temperature : {{weatherData.main.temp}}</h3>
+        <h3>Humidite : {{weatherData.main.humidity}} </h3>
+        <h3>Description : {{weatherData.weather[0].description}} </h3>
+        <h3>Vitesse du vent : {{weatherData.wind.speed}} </h3>
+        <h2>Localisation </h2>
+        <h3>Longitude {{weatherData.coord.lon}}</h3>
+        <h3>Latitude {{weatherData.coord.lat}}</h3>
+
+      </div>
+    </pre>
+  </div>
+  

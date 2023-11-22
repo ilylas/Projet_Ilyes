@@ -1,4 +1,4 @@
-<br><h1 class="text-center" >Nos Activitées</h1>
+<br><h1 class="text-center" >Les Activitées du Club</h1>
 <div> 
   <input type="text" class="form-control" placeholder="Rechercher une activitée par titre" [(ngModel)]="searchTerm">
 </div>
@@ -15,10 +15,10 @@
           <div class="card-footer" >            
             <div  class="bg bg-dark text-white rounded-pill">Date de l'activitée: {{activite.date|date:'dd-MM-yyyy'}}</div>
           </div> 
-          <button class="badge rounded-pill bg bg-secondary"> <a class="text-white nav-link" [routerLink]="['/details',activite.id]">Consulter l'activité</a> </button>
+          <button class="badge rounded-pill bg bg-secondary"> <a class="text-white nav-link" [routerLink]="['/details',activite.id]">Consulter l'activité <i class="fa-solid fa-arrow-right-to-bracket"></i> </a> </button>
           <app-supprimeractivite  [activite]="activite" (onSupprimerEvent)="onsupprimer($event)"></app-supprimeractivite>
-          <button class="badge rounded-pill bg bg-success" [routerLink]="['/update',activite.id]">Modifier cette activité</button>
-          <button class="badge rounded-pill btn btn-infos nav-link" ><a [routerLink]="['/checkcomments',activite.id]">Afficher les commentaires</a></button>   
+          <button class="badge rounded-pill bg bg-success" [routerLink]="['/update',activite.id]">Modifier cette activité  <i class="fa-solid fa-bolt"></i></button>
+          <button class="badge rounded-pill btn btn-infos nav-link" ><a [routerLink]="['/checkcomments',activite.id]">Visulaiser les commentaires <i class="fa-solid fa-eye"></i></a></button>   
         </div>
     </div>
 </div>

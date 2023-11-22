@@ -11,7 +11,6 @@ import { MenuComponent } from './front-office/menu/menu.component';
 import { ListeactivitesComponent } from './front-office/listeactivites/listeactivites.component';
 import { PresentationComponent } from './front-office/presentation/presentation.component';
 import { ErreurComponent } from './front-office/erreur/erreur.component';
-import { CreercompteComponent } from './front-office/creercompte/creercompte.component';
 import { AProposDeNousComponent } from './front-office/a-propos-de-nous/a-propos-de-nous.component';
 import { AjouteractiviteComponent } from './back-office/ajouteractivite/ajouteractivite.component';
 import { DashboardComponent } from './back-office/dashboard/dashboard.component';
@@ -31,6 +30,7 @@ import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/ac
 import { CommentaireComponent } from './front-office/commentaire/commentaire.component';
 import { AjouterCommentaireComponent } from './front-office/ajouter-commentaire/ajouter-commentaire.component';
 import { ActiviteComponent } from './front-office/activite/activite.component';
+import { ApiweatherComponent } from './front-office/apiweather/apiweather.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +38,6 @@ import { ActiviteComponent } from './front-office/activite/activite.component';
     ListeactivitesComponent,
     PresentationComponent,
     ErreurComponent,
-    CreercompteComponent,
     AProposDeNousComponent,
     AjouteractiviteComponent,
     DashboardComponent,
@@ -54,6 +53,7 @@ import { ActiviteComponent } from './front-office/activite/activite.component';
     CommentaireComponent,
     AjouterCommentaireComponent,
     ActiviteComponent,
+    ApiweatherComponent,
     
 
   ],

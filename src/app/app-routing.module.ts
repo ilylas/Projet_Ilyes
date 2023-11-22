@@ -6,7 +6,6 @@ import { ModifieractiviteComponent } from './back-office/modifieractivite/modifi
 import { MotdepasseoublieComponent } from './back-office/motdepasseoublie/motdepasseoublie.component';
 import { SupprimeractiviteComponent } from './back-office/supprimeractivite/supprimeractivite.component';
 import { AProposDeNousComponent } from './front-office/a-propos-de-nous/a-propos-de-nous.component';
-import { CreercompteComponent } from './front-office/creercompte/creercompte.component';
 import { ErreurComponent } from './front-office/erreur/erreur.component';
 import { ListeactivitesComponent } from './front-office/listeactivites/listeactivites.component';
 import { MenuComponent } from './front-office/menu/menu.component';
@@ -20,6 +19,7 @@ import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/ac
 import { CommentaireComponent } from './front-office/commentaire/commentaire.component';
 import { AjouterCommentaireComponent } from './front-office/ajouter-commentaire/ajouter-commentaire.component';
 import { ActiviteComponent } from './front-office/activite/activite.component';
+import { ApiweatherComponent } from './front-office/apiweather/apiweather.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},
@@ -27,10 +27,13 @@ const routes: Routes = [
   {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent},
   {path:'activite',title:'une activite', component:ActiviteComponent},
   {path:'aboutus',title:'aboutus', component:AProposDeNousComponent},
-  {path:'register',title:'register', component:CreercompteComponent},
   {path:'connexion',title:'espace administrateur', component:ConnexionComponent},
   {path:'',redirectTo:'menu',pathMatch:'full'},
-  {path:'user',title:'espace utilisateur', component:UserComponent},
+  {path:'user',title:'espace utilisateur', component:UserComponent,
+  children:[
+  ]},
+  {path:"apiweather",title:"visiter l'api weather",component:ApiweatherComponent},
+
   {path:'update/:id',title:'uptatedactivity', component:ActiviteAModifierComponent,canActivate:[connexionGuard]},
   {path:'dashboard',title:'dashboard', component:DashboardComponent,canActivate:[connexionGuard]},
   {path:'add',title:'add', component:AjouteractiviteComponent,canActivate:[connexionGuard]},
