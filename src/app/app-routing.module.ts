@@ -19,11 +19,13 @@ import { DetailsComponent } from './front-office/details/details.component';
 import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/activite-a-modifier.component';
 import { CommentaireComponent } from './front-office/commentaire/commentaire.component';
 import { AjouterCommentaireComponent } from './front-office/ajouter-commentaire/ajouter-commentaire.component';
+import { ActiviteComponent } from './front-office/activite/activite.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},
   {path:'presentation',title:'presenation', component:PresentationComponent},
   {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent},
+  {path:'activite',title:'une activite', component:ActiviteComponent},
   {path:'aboutus',title:'aboutus', component:AProposDeNousComponent},
   {path:'register',title:'register', component:CreercompteComponent},
   {path:'connexion',title:'espace administrateur', component:ConnexionComponent},

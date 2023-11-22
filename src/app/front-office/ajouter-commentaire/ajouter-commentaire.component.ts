@@ -15,7 +15,6 @@ export class AjouterCommentaireComponent  {
   nom!:string;
   prenom!:string;
   Commentaire!:string;
-  commentaireForm!:FormGroup
 
   constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute,private formBuilder:FormBuilder,private router:Router){}
 

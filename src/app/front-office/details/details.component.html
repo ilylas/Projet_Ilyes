@@ -13,9 +13,27 @@
                 <h3>{{activite.nblikes}}</h3>
                 <h2>Club aimé par l'utilisateur :</h2>
                 <h3 class="align-photo" [ngClass]="{'c1':aimermenu==true,'c2':aimermenu==false}"></h3>
+                
+                
+            </div>
+            <button (click)="onafficher()">Afficher les commentaires </button>
+            <div class="card-footer" *ngIf="afficher">
                 <h2>les commentaires de cette activitée:</h2>
                 <div class="card-body" *ngFor="let c of activite.comments,index as i">
-                    <label>Commentaire n°</label>{{i+1}}
+                    <div class="card-header">
+                        <form>
+                          <label class="card-header">Commentaire n° {{i+1}}</label>
+                          <div class="card-body">
+                          <label>Nom</label>
+                          <input type="text" [value]="c.nom" readonly><br>
+                          <label>Prenom</label>
+                          <input type="text" [value]="c.prenom" readonly><br>
+                          <label>message</label>
+                          <input type="text" [value]="c.message" readonly></div>
+                        </form>
+                    </div>
+                </div>
+                <!-- <label>Commentaire n°</label>{{i+1}}
                     <table>
                         <tr>
                             <th>Nom</th>
@@ -31,25 +49,14 @@
                                 {{c.message}}
                             </td>
                         </tr>
-                    </table>
-                    <!-- <label>Commentaire n°</label>{{i+1}}
-                    <pre>
-                    <label>Nom :</label> 
-                    <input type="text" [value]="c.nom" readonly>
-                    <label>Prenom :</label> 
-                    <input type="text" [value]="c.prenom" readonly>
-                    <label>Commentaire :</label> 
-                    <input type="text" [value]="c.message" readonly> 
-                </pre>-->
-                </div>
-            </div>
-            <div class="card-footer">
-                <h2>Ajouter un commentaire</h2>
-                <router-outlet *ngIf=""></router-outlet>
-            </div>                
+                    </table> -->
+                <!-- <button [routerLink]="['/details/',activite.id,'comments',activite.id]">Afficher les commentaires</button> -->
+            </div>                 
         </div>
     </div>
 </div>
+<router-outlet></router-outlet>
+
 
   <!-- <div *ngFor="let c of lesCommentaires">
     Nom : {{c.nom}}

@@ -15,6 +15,7 @@ export class DetailsComponent implements OnInit {
   activite!:Activite
   nblikes!:number
   aimermenu:boolean=false;
+  afficher:boolean=false;
   constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
 
   ngOnInit(){
@@ -31,6 +32,14 @@ export class DetailsComponent implements OnInit {
     }
    }
 
+   onafficher(){
+    if(!this.afficher){
+      this.afficher=true;
+    }
+    else{
+      this.afficher=false;
+    }
+   }
 
    
 

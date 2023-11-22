@@ -1,0 +1,27 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+button {
+    font-size: large; 
+    padding:10px ; 
+    font-family: Arial, Helvetica, sans-serif; 
+    margin-bottom: 10px;
+    margin-left:100px ;
+    margin-right: 100px;
+}
+.card-header{
+    margin-top: 10px;
+}
+
+
+.card-footer div{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 5px;
+}
+
+#likebtn{
+    margin-left: 200px;
+    margin-right: 200px;
+}
