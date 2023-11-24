@@ -7,6 +7,8 @@ import { ActiviteService } from 'src/app/back-office/services/activite.service';
 })
 export class MenuComponent implements OnInit{
   nblikes:number=0;
+  showlist:boolean=false;
+  selectedOption!:string;
 
   constructor(private activiteService: ActiviteService) {}
 
@@ -32,6 +34,15 @@ export class MenuComponent implements OnInit{
     this.nblikes=this.activiteService.getTotalLikes();
     if(!this.activiteService.hasUserLiked())
     this.nblikes=0;
+  }
+
+  afficher(){
+    if(!this.showlist){
+      this.showlist=true;
+    }
+    else{
+      this.showlist=false
+    }
   }
   
 }

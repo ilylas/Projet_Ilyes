@@ -19,7 +19,7 @@ import { ActiviteAModifierComponent } from './back-office/activite-a-modifier/ac
 import { CommentaireComponent } from './front-office/commentaire/commentaire.component';
 import { AjouterCommentaireComponent } from './front-office/ajouter-commentaire/ajouter-commentaire.component';
 import { ActiviteComponent } from './front-office/activite/activite.component';
-import { ApiweatherComponent } from './front-office/apiweather/apiweather.component';
+import { ApiweatherComponent } from './apiweather/apiweather.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},

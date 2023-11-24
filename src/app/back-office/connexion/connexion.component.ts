@@ -19,7 +19,7 @@ export class ConnexionComponent{
     if(name==""||pwd==""){
       alert('Veuillez entrer vos données de connexion !');
     }
-    if(!this.connexionService.autentif){
+    if(!this.connexionService.autentif&&name!=""||pwd!=""){
       this.nbtentatives--;
       alert('Vous avez entrer des données incorrects .\nVous avez encore '+this.nbtentatives+' tentatives !');
     }

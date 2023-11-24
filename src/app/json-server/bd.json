@@ -133,6 +133,19 @@
           "prerequis": "Aucune connaissance préalable requise"
         }
       ]
+    },
+    {
+      "id": 45,
+      "titre": "lala",
+      "image": "sdf",
+      "nblikes": "40",
+      "date": "2023-11-19",
+      "disponible": true,
+      "details": {
+        "intervenant": "ilyes",
+        "endroit": "nimp",
+        "prerequis": "nimp"
+      }
     }
   ]
 }
