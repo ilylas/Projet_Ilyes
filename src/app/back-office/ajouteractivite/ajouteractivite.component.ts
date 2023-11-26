@@ -34,7 +34,6 @@ export class AjouteractiviteComponent {
         endroit:[''],
         prerequis:['']
       }),
-      // commentaire:this.formBuilder.array([])
     })
    this.activiteService.getActivite().subscribe(
       data=>{
