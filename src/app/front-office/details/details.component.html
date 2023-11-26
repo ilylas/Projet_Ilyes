@@ -17,10 +17,7 @@
                 <h3>{{activite.details[0].endroit}}</h3>
                 <h2>Prérequis : </h2>
                 <h3>{{activite.details[0].prerequis}}</h3>
-                <h2>Club aimé par l'utilisateur :</h2>
-                <h3 class="align-photo" [ngClass]="{'c1':aimermenu,'c2':!aimermenu}"></h3>
-                
-                
+
             </div>
             <button (click)="onaffichercomment()">Afficher les commentaires </button>
             <div class="card-footer" *ngIf="afficher">

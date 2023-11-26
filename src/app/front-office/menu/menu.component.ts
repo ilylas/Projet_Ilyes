@@ -26,6 +26,7 @@ export class MenuComponent implements OnInit{
     else{
       alert("Vous avez déja fait un like ! \nMerci \\{^_^}/")
     }
+    this.activiteService.likedmenu=true
 
 
     

@@ -24,7 +24,13 @@ export class ParticiperAUneActiviteComponent {
         this.lesactivites=data
       }
     )
-  }
+    this.aimermenu=this.activiteService.likedmenu
+    this.nblikes = this.activiteService.getTotalLikes();
+    this.activiteService.updatenblikesactivite(this.activite.nblikes);
+    if(this.nblikes==1){
+      this.aimermenu=true
+    }
+}
 
 onchoisir(activite:Activite){
   activite.nbdemandes=0

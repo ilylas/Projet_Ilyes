@@ -25,14 +25,6 @@ export class DetailsComponent implements OnInit {
          this.activite=data
        }
      )
-    this.activiteService.updatenblikesactivite( this.activite.nblikes);
-    this.nblikes = this.activiteService.getTotalLikes();
-    if(this.nblikes==1){
-      this.aimermenu=true
-    }
-    else{
-      this.aimermenu=false
-    }
    }
 
    onaffichercomment(){

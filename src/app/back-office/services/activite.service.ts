@@ -15,6 +15,7 @@ export class ActiviteService {
   activite!:Activite;
   totalLikes:number=0;
   private userHasLiked: boolean = false;
+  likedmenu:boolean=false
 
   constructor(private http:HttpClient) {}
 
