@@ -5,54 +5,51 @@
   background-color: green;
   color: white;
 }
-.actif{
-  font-size: large;
-  color: white;
-}
+
 ul{
  text-align: center;
 }
 
-h1{
+/* h1{
   background-color: rgb(59, 186, 63);
-  margin-bottom: 0;
-  padding: 15px;
+   /* margin-bottom: 0;  
+  /* padding: 15px;  
   color: white;
-  font-size: 42px;
+  /* font-size: 42px; 
   font-family:cursive ;
-}
-/* a{
-  color: white;
-}
-
-a:hover{
-  color: white;
-} */
-
+}  */
 a{
-  margin-top:500px;
-  margin-left:20px;
-  transform: translateX(-280px);
+  color: black;
+  border-radius: 20px;
+  margin-top: 200px;
 }
 
+
+.body{
+  background-image: url("../../../assets/blur-nature-green-park-with-bokeh-sun-light-abstract-background-copy-space-travel-adventure-environment-concept-vintage-tone-filter-color-style_1253-1107.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+a{
+  transform: translateX(-280px);
+ 
+}
 
 li{
   padding: 5px;
-  margin: 0px;
 }
 
 @keyframes anima1 {
   0%{
-    transform: translateX(-50px) translateY(-50px);
+    transform:scale(0.5);
   }
+
   50%{
-    transform: translateX(100px);
+    transform: scale(1.5);
   }
- 80%{
-    transform: translateX(-50px);
-  }
+
   100%{
-    transform: translateX(50px);
+    transform:scale(1);
   }
 }
 
@@ -71,6 +68,16 @@ li{
   }
 }
 
+.usertext{
+  background-color: white;
+  padding: 10px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0,5);
+  text-shadow: 2px 2px gray;
+  margin-top: 300px;
+}
+
 .user{
   border: 1px solid black;
   width: 300px;
@@ -81,7 +88,17 @@ li{
   background-size: cover;
   background-position: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0,5);
-  /* animation: anima 3s timing-function delay iteration-count direction fill-mode; */
+}
+
+.admintext{
+  background-color: white;
+  padding: 10px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0,5);
+  text-shadow: 2px 2px gray;
+  margin-top: 300px;
+  margin-right: -100px;
 }
 
 .admin{
@@ -96,24 +113,40 @@ li{
   background-position: center;
   background-size: 300px;
   background-repeat: no-repeat;
+  margin: 50px;
+  background-color: white;
 }
 
-.user:hover{
-  animation: anima1 3s ease-in-out;
+div.userpart:hover{
+  animation: anima1 2s ease-in-out forwards;
 }
 
-.admin:hover{
-  animation: anima2 3s ease-in-out;
+div.adminpart:hover{
+  animation: anima1 2s ease-in-out forwards;
 }
+
+
 
 div{
   display: flex;
   align-items: center;
   font-size: x-large;
-  text-align: center;
-  justify-content: center;
+  justify-content: center; 
 }
 
 p a{
   color: white;
+}
+
+.userpart{
+  margin-bottom: 500px;
+  /* width: 500px; */
+  margin-top: 200px;
+
+}
+
+.adminpart{
+  margin-bottom: 500px;
+  margin-top: 200px;
+
 }

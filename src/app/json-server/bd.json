@@ -6,7 +6,7 @@
       "image": "assets/planter_un_arbre.jpg",
       "nblikes": 30,
       "disponible": true,
-      "date": "2023-11-29T00:00:00.000Z",
+      "date": "2023-11-29",
       "details": [
         {
           "intervenant": "Karim Ben Salah",
@@ -20,30 +20,32 @@
           "prenom": "xcv",
           "message": "bonjour"
         }
-      ]
+      ],
+      "nbdemandes":0
     },
     {
       "id": 2,
       "titre": "Nettoyage de plage",
       "image": "/assets/eco-plage.jpg",
-      "nblikes": 103,
+      "nblikes": 104,
       "disponible": true,
-      "date": "2023-12-13T00:00:00.000Z",
+      "date": "2023-12-13",
       "details": [
         {
           "intervenant": "Marwa Souissi",
           "endroit": "Zone côtière",
           "prerequis": "Apportez un seau de nettoyage"
         }
-      ]
+      ],
+      "nbdemandes":0
     },
     {
       "id": 3,
       "titre": "Journée Mondiale de la faune",
       "image": "assets/modele-publication-instagram-medias-sociaux-journee-mondiale-animaux_660886-1184.avif",
-      "nblikes": 16,
+      "nblikes": 17,
       "disponible": false,
-      "date": "2022-08-20T00:00:00.000Z",
+      "date": "2022-08-20",
       "details": [
         {
           "intervenant": "Dr. Rached",
@@ -57,7 +59,8 @@
           "prenom": "Ilyes",
           "message": "activitée superbe"
         }
-      ]
+      ],
+      "nbdemandes":0
     },
     {
       "id": 4,
@@ -65,14 +68,15 @@
       "image": "assets/mddi_littering_mikadopublicis.png",
       "nblikes": 21,
       "disponible": true,
-      "date": "2023-12-15T00:00:00.000Z",
+      "date": "2023-12-15",
       "details": [
         {
           "intervenant": "Sophie Martin",
           "endroit": "Centre-ville",
           "prerequis": "Aucune connaissance préalable requise"
         }
-      ]
+      ],
+      "nbdemandes":0
     },
     {
       "id": 5,
@@ -80,29 +84,31 @@
       "image": "assets/randonner-leger-shutterstock_1930841909.webp",
       "nblikes": 23,
       "disponible": true,
-      "date": "2024-03-20T00:00:00.000Z",
+      "date": "2024-03-20",
       "details": [
         {
           "intervenant": "Thomas Durand",
           "endroit": "Montagnes isolées",
           "prerequis": "Bonnes chaussures de randonnée et eau potable"
         }
-      ]
+      ],
+      "nbdemandes":0
     },
     {
       "id": 6,
       "titre": "Atelier de recyclage créatif",
       "image": "assets/images.jpg",
-      "nblikes": 17,
+      "nblikes": 32,
       "disponible": false,
-      "date": "2023-09-30T00:00:00.000Z",
+      "date": "2023-09-30",
       "details": [
         {
           "intervenant": "Céline Dubois",
           "endroit": "Salle communautaire",
           "prerequis": "Apportez des matériaux de recyclage"
         }
-      ]
+      ],
+      "nbdemandes":0
     },
     {
       "id": 7,
@@ -110,14 +116,15 @@
       "image": "assets/téléchargement.jpg",
       "nblikes": 41,
       "disponible": true,
-      "date": "2024-05-10T00:00:00.000Z",
+      "date": "2024-05-10",
       "details": [
         {
           "intervenant": "Pauline Lefebvre",
           "endroit": "Forêt nationale",
           "prerequis": "Équipement de camping complet"
         }
-      ]
+      ],
+      "nbdemandes":0
     },
     {
       "id": 8,
@@ -125,14 +132,15 @@
       "image": "assets/3617_212_jardinbio-cd34.jpg",
       "nblikes": 26,
       "disponible": true,
-      "date": "2023-06-10T10:00:00.000Z",
+      "date": "2023-06-10",
       "details": [
         {
           "intervenant": "Sarah Martin, experte en jardinage biologique",
           "endroit": "Jardin biologique serein",
           "prerequis": "Aucune connaissance préalable requise"
         }
-      ]
+      ],
+      "nbdemandes":0
     },
     {
       "id": 45,
@@ -146,6 +154,13 @@
         "endroit": "nimp",
         "prerequis": "nimp"
       }
+    }
+  ],
+  "donnees": [
+    {
+      "nom":"ilyes",
+      "mdp": "admin",
+      "id": 1
     }
   ]
 }

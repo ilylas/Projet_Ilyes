@@ -18,10 +18,7 @@ export class AjouteractiviteComponent {
   constructor(private activiteService:ActiviteService,private formBuilder:FormBuilder,private router:Router){}
 
   activitesForm!:FormGroup;
-  // activiteId!: number;
-  // nom!:string;
-  // date!:Date;
-  // message!:string;
+
 
   
   ngOnInit(){
@@ -58,20 +55,6 @@ export class AjouteractiviteComponent {
   onResetForm(){
     this.activitesForm.reset();
   }
-
-  // public get lesCommentaires(){
-  //   return this.activitesForm.get('commentaire') as FormArray
-  // }
-
-  // onAjouter(){
-  //   this.lesCommentaires.push(this.formBuilder.control(''))
-  // }
-
-  // onAjouter(){
-  //   // Implement logic to add a new comment control to the form array
-  //   const commentairesFormArray = this.activitesForm.get('Commentaires') as FormArray;
-  //   commentairesFormArray.push(new FormControl(''));
-  // }
 
 
 }

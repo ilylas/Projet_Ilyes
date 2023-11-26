@@ -1,0 +1,22 @@
+<h2>Club aimé par l'utilisateur :</h2>
+<h3 class="align-photo" [ngClass]="{'c1': aimermenu, 'c2': !aimermenu}"></h3>
+
+<input type="text" class="form-control" placeholder="Rechercher une activitée par titre" [(ngModel)]="searchTerm" ><br>
+
+<form class="container" >
+    <div class="row">
+      <div  *ngFor="let activite of lesactivites|activityFilter:searchTerm;index as i" class="card col-md-6 text-center my-3 p " >
+        <div class="card-header">
+            <h1>Activitée numéro {{activite.id}}</h1>
+        </div>
+        <div class="card-body">
+            <h2 >{{activite.titre }}</h2>
+            <img [src]="activite.image" alt="{{activite.titre}}"><br>
+        </div> 
+        <div class="card-footer">
+            <input type="button" value="Choisir" class="btn btn-success" (click)="onchoisir(activite)">
+        </div>
+      </div>
+    </div>
+</form>
+

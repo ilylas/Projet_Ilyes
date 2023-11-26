@@ -20,6 +20,7 @@ import { CommentaireComponent } from './front-office/commentaire/commentaire.com
 import { AjouterCommentaireComponent } from './front-office/ajouter-commentaire/ajouter-commentaire.component';
 import { ActiviteComponent } from './front-office/activite/activite.component';
 import { ApiweatherComponent } from './apiweather/apiweather.component';
+import { ParticiperAUneActiviteComponent } from './front-office/participer-a-une-activite/participer-a-une-activite.component';
 
 const routes: Routes = [
   {path:'menu',title:'menu', component:MenuComponent},
@@ -27,11 +28,10 @@ const routes: Routes = [
   {path:'listeactivites',title:'listeactivites', component:ListeactivitesComponent},
   {path:'activite',title:'une activite', component:ActiviteComponent},
   {path:'aboutus',title:'aboutus', component:AProposDeNousComponent},
+  {path:'participate',title:'Participer à une activité', component:ParticiperAUneActiviteComponent},
   {path:'connexion',title:'espace administrateur', component:ConnexionComponent},
   {path:'',redirectTo:'menu',pathMatch:'full'},
-  {path:'user',title:'espace utilisateur', component:UserComponent,
-  children:[
-  ]},
+  {path:'user',title:'espace utilisateur', component:UserComponent},
   {path:"apiweather",title:"visiter l'api weather",component:ApiweatherComponent},
 
   {path:'update/:id',title:'uptatedactivity', component:ActiviteAModifierComponent,canActivate:[connexionGuard]},

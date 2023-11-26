@@ -45,4 +45,5 @@
     text-decoration: underline;
   }
 
-   
+input.ng-dirty{background-color: bisque;}
+input.ng-invalid.ng-touched { background-color: orange;}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Activite } from 'src/app/back-office/classes/activite';
 import { ActiviteService } from 'src/app/back-office/services/activite.service';
 @Component({
   selector: 'app-menu',
@@ -33,7 +34,8 @@ export class MenuComponent implements OnInit{
   ngOnInit():void{
     this.nblikes=this.activiteService.getTotalLikes();
     if(!this.activiteService.hasUserLiked())
-    this.nblikes=0;
+      this.nblikes=0;
+    console.log(this.nblikes)
   }
 
   afficher(){

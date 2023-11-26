@@ -22,23 +22,4 @@ export class ApiweatherComponent{
     });
   }
 
-
-  // weatherData: any;
-
-  // getWeather(): void {
-  //   this.acitiviteService.getWeather("Tunisia").subscribe((data) => {
-  //     this.weatherData = data;
-  //     console.log(this.weatherData);
-  //   });
-  // }
-
-  //data: any;
-
-
-  //   ngOnInit(): void {
-  //   this.acitiviteService.getData().subscribe((result) => {
-  //     this.data = result;
-  //     console.log(this.data);
-  //   });
-  // }
 }

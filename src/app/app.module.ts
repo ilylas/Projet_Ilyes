@@ -31,6 +31,7 @@ import { CommentaireComponent } from './front-office/commentaire/commentaire.com
 import { AjouterCommentaireComponent } from './front-office/ajouter-commentaire/ajouter-commentaire.component';
 import { ActiviteComponent } from './front-office/activite/activite.component';
 import { ApiweatherComponent } from './apiweather/apiweather.component';
+import { ParticiperAUneActiviteComponent } from './front-office/participer-a-une-activite/participer-a-une-activite.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { ApiweatherComponent } from './apiweather/apiweather.component';
     AjouterCommentaireComponent,
     ActiviteComponent,
     ApiweatherComponent,
+    ParticiperAUneActiviteComponent,
     
 
   ],

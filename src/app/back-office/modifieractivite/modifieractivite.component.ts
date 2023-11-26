@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { Activite } from '../classes/activite';
-import { Details } from '../classes/details';
 import { ActiviteService } from '../services/activite.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-modifieractivite',
@@ -13,14 +11,14 @@ import { Router } from '@angular/router';
 export class ModifieractiviteComponent {
   lesactivites!:Activite[]
   activitesForm!:FormGroup;
-  constructor(private activiteService:ActiviteService,private formBuilder:FormBuilder,private router:Router){}
+  constructor(private activiteService:ActiviteService,private formBuilder:FormBuilder){}
 
   
 
   ngOnInit(){
     this.activitesForm=this.formBuilder.nonNullable.group({
-      id:[0],
-      titre:[''],
+      id:[0,[Validators.min(0),Validators.max(20)]],
+      titre:['',Validators.maxLength(20)],
       image:[''],
       nblikes:[0],
       date:[new Date],
@@ -30,7 +28,6 @@ export class ModifieractiviteComponent {
         endroit:[''],
         prerequis:['']
       }),
-      // commentaire:this.formBuilder.array([])
     })
    this.activiteService.getActivite().subscribe(
       data=>{
@@ -60,56 +57,6 @@ export class ModifieractiviteComponent {
   onResetForm(){
     this.activitesForm.reset();
   }
-
-  // ancienid!: number;
-  // // nouvelId!: number;
-  // nouveauTitre!: string;
-  // nouvelleimage!: string;
-  // nouveaunblikes!:number;
-  // dispo!:boolean;
-  // nouvelledate!:Date;
-  // nouvelintervenant!:string;
-  // nouvelendroit!:string;
-  // nouvelprerequis!:string;
-
-
-  // onModifier(id:number){
-  //   const details:Details=new Details(
-  //     this.nouvelintervenant,
-  //     this.nouvelendroit,
-  //    this.nouvelprerequis
-  //   )
- 
-
-  //   const nouvelleActivite:Activite =new Activite  (
-  //     this.ancienid,
-  //     this.nouveauTitre,
-  //     this.nouvelleimage,
-  //     this.nouveaunblikes,
-  //     this.dispo,
-  //     this.nouvelledate,
-  //     [details]
-  //   )     
-
-  //   // let I=this.lesactivites.findIndex(elt=>elt.titre==this.nouveauTitre)
-  //   this.activiteService.updateActivite(nouvelleActivite,id).subscribe(
-  //     ()=>{
-  //       let result=this.lesactivites.find(elt=>elt.id==this.ancienid);
-  //   if(result!=undefined){
-  //     result=nouvelleActivite
-  //   }
-  //   }
-  //   )
-  //   if(this.ancienid==0){
-  //     alert("l'activité à modifier nexiste pas !");
-  //   }
-  //   else{
-  //     alert("modification terminée !")
-  //   }
-  // }
-
-  
-
   
 
 

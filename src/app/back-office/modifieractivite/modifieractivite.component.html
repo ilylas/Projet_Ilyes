@@ -7,7 +7,7 @@
 <input type="number" id="ancienid" formControlName="id" #ancienid>
 <h1>Donner les informations sur la nouvelle activités</h1>
 
-<label for="titre">titre:</label>
+<label for="titre" *ngIF="titre?.errors?.['pattern']">titre:</label>
 <input type="text" formControlName="titre">
 
 <label for="image">image:</label>
@@ -39,5 +39,4 @@
 <input type="button" class="btn btn-danger" (click)="onResetForm()" routerLink="/lesactivites" value="Annuler"> 
 </form>
 </div>
-
 </body>

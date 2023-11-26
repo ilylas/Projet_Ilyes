@@ -14,7 +14,7 @@ export class DetailsComponent implements OnInit {
   identifiant!:number
   activite!:Activite
   nblikes!:number
-  aimermenu:boolean=false;
+  aimermenu!:boolean;
   afficher:boolean=false;
   constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
 
@@ -30,9 +30,12 @@ export class DetailsComponent implements OnInit {
     if(this.nblikes==1){
       this.aimermenu=true
     }
+    else{
+      this.aimermenu=false
+    }
    }
 
-   onafficher(){
+   onaffichercomment(){
     if(!this.afficher){
       this.afficher=true;
     }

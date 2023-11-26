@@ -61,4 +61,17 @@ form {
   }
   
 
+  h1{
+    color: green;
+    text-decoration: underline;
+  }
+
+
+input.ng-dirty{background-color: orange;}
+
+input.ng-touched { border-left:4px solid green;}
+
+input.ng-untouched { border-left:4px solid red;}
+
+input.ng-dirty{background-color: bisque;}
   

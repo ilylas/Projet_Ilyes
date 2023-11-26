@@ -3,6 +3,7 @@ import { Activite } from '../classes/activite';
 import { Details } from '../classes/details';
 import { ActiviteService } from '../services/activite.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-activite-a-modifier',
@@ -11,53 +12,49 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ActiviteAModifierComponent implements OnInit {
   lesactivites!:Activite[]
-  constructor(private activiteService:ActiviteService,private activatedRoute:ActivatedRoute){}
-
-  ancienid!: number;
-  nouveauTitre!: string;
-  nouvelleimage!: string;
-  nblikes!:number;
-  dispo!:boolean;
-  nouvelledate!:Date;
-  nouvelintervenant!:string;
-  nouvelendroit!:string;
-  nouvelprerequis!:string;
-
+  activitesForm!:FormGroup;
+  constructor(private activiteService:ActiviteService,private formBuilder:FormBuilder){}
   ngOnInit(){
-    this.ancienid=this.activatedRoute.snapshot.params['id']
+    this.activitesForm=this.formBuilder.nonNullable.group({
+      id:[0,[Validators.min(0),Validators.max(20)]],
+      titre:['',Validators.maxLength(20)],
+      image:[''],
+      nblikes:[0],
+      date:[new Date],
+      disponible:[true],
+      details:this.formBuilder.group({
+        intervenant:[''],
+        endroit:[''],
+        prerequis:['']
+      }),
+      // commentaire:this.formBuilder.array([])
+    })
+   this.activiteService.getActivite().subscribe(
+      data=>{
+        this.lesactivites=data
+      }
+    )
   }
 
+  public get ID(){
+    return this.activitesForm.get('id');
+  }
 
-  onModifier(id:number){
-
-    const details:Details={
-    intervenant: this.nouvelintervenant,
-    endroit: this.nouvelendroit,
-    prerequis: this.nouvelprerequis
-  };
-
-    const nouvelleActivite:Activite=new Activite (
-      this.ancienid, 
-      this.nouveauTitre,
-      this.nouvelleimage,
-      this.nblikes,
-      this.dispo,
-      this.nouvelledate,
-      [details]
-   );
-    this.activiteService.updateActivite(nouvelleActivite,id).subscribe(
-      ()=>{
-      let resultat=this.lesactivites.find(elt=>{elt.id==this.ancienid})
-    if(resultat!=undefined){
-      resultat=nouvelleActivite
+  onSubmitForm(){
+    if(this.ID!=null){
+      this.activiteService.updateActivite(this.activitesForm.value as Activite,Number(this.ID)).subscribe(
+        (data)=>{
+          console.log(data)
+        }
+      )
+      alert("Ajout effectué avec succees !")
     }
     else{
-      alert("l'activité à modifier n'existe pas !")
+      alert("Veuillez entrer l'ID !")
     }
-    }
-    )
-
-
   }
 
+  onResetForm(){
+    this.activitesForm.reset();
+  } 
 }

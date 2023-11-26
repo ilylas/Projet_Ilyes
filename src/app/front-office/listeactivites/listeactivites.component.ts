@@ -9,10 +9,15 @@ import { ActiviteService } from 'src/app/back-office/services/activite.service';
 })
 export class ListeactivitesComponent implements OnInit{
   searchTerm!:string;
-  constructor(private activiteService:ActiviteService){}
   lesactivites!:Activite[];
   nblikes!:number
-  
+  activite!:Activite|undefined
+  activitedate!:Activite[]
+  Search!:Activite
+  trouve!:boolean
+
+  constructor(private activiteService:ActiviteService){}
+
 
   ngOnInit(){
    this.activiteService.getActivite().subscribe(
@@ -27,51 +32,25 @@ export class ListeactivitesComponent implements OnInit{
     this.activiteService.updateActivite(activite,activite.id).subscribe()
   }
 
-  // nouvelleactivite=this.activiteService.getnouvelactivite()
-  // ajouter(){
-  //   if (this.nouvelleactivite) {
-  //   this.lesactivites.push(this.nouvelleactivite);
-  //     this.activiteService.ajouterActivite(this.nouvelleactivite);
-  //     alert("Activitée Ajoutée ! ");
-  //     // this.lesactivites[this.lesactivites.length++]=nouvelleactivite;
-  //   }
-  // }
-
-  // ngOnInit(){
-  //   const nouvelleactivite=this.activiteService.getnouvelactivite()
-  //   if (nouvelleactivite) {
-  //     this.ajouter();
-  //     this.lesactivites[this.lesactivites.length++]=nouvelleactivite;
-  //   }
-  // }
-
-  // ngOnInit(){
-  //   const nouvelleactivite=this.activiteService.getnouvelactivite()
-  //   this.lesactivites.push(nouvelleactivite)
-  // }
-
-
-  //  this.selectedactivity=this.lesactivites;
-
- 
-  
-  // selectedactivity!:Activite[]
-  
-  // get SearchTerm():string{
-  //   return this.searchTerm;
-  // }
-
-  // set SearchTerm(value:string){
-  //   this.searchTerm=value;
-  //   this.selectedactivity=this.selectactivity(value)
-  // }
-
-  // selectactivity(searchactivity:string){
-  //   return this.lesactivites.filter(elt=>elt.titre.toLowerCase().indexOf(searchactivity.toLowerCase())!==-1)
-  // }
-
-  // constructor(private acticiteService:ActiviteService){}
-
-
-
+  Rcherchecombine(text:string){
+    if(text!=""){
+      if (!isNaN(Number(text))){
+        this.activiteService.getUneActivite((Number(text))).subscribe( 
+          (data) => {
+              this.Search=data
+              this.trouve = true;
+            }
+        );    
+      }
+      else{
+        this.activiteService.getUneActiviteByDate(text).subscribe(
+          (data) => {
+              this.Search=data
+              this.trouve = true;
+              console.log(this.Search)
+          }
+        );
+      }
+    }
+  }
 }

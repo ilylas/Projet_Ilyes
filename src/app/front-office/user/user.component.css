@@ -11,6 +11,12 @@
 }
 ul{
  text-align: center;
+ background-color: white;
+ margin-left: 400px;
+ margin-right:400px;
+ border-radius: 50px;
+ border: 2px solid black;
+ padding: 10px;
 }
 
 h1{
@@ -39,3 +45,40 @@ body{
   background-color: aqua;
 }
 
+@keyframes anim {
+  0%{
+    transform:translateY(-70px);
+    opacity: 0;
+    color:lightgreen;
+
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+h2 {
+  /* text-align: center; */
+  font-size: 50px;
+  margin-top: 200px;
+  margin-left:300px;
+  animation: anim 1s ease-in-out;
+  color: green;
+}
+
+#down-arrow {
+  position: absolute;
+  bottom: 70px;
+  right: 50%;
+  animation: bounce 1s cubic-bezier(.5,.05,1,.5)infinite alternate;
+  transform-origin: right bottom;
+}
+
+body{
+  background-image: url("../../../assets/menu.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

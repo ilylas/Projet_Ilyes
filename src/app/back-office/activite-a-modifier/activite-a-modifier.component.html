@@ -1,33 +1,40 @@
+<div class="container card">
 <h1>Donner l'Id de l'activité à changer</h1>
-
+<form [formGroup]="activitesForm" (ngSubmit)="onSubmitForm()" class="p-2 bg-light rounded text-center">
+    
 <label for="ancienid">id de l'activité à modifier:</label>
-<input type="number" id="ancienid" [(ngModel)]="ancienid" readonly>
+<input type="number" id="ancienid" formControlName="id" #ancienid>
 
 <h1>Donner les informations sur la nouvelle activités</h1>
-
-<label for="titre">titre:</label>
-<input type="text"  [(ngModel)]="nouveauTitre">
+<label for="titre" *ngIF="titre?.errors?.['pattern']">titre:</label>
+<input type="text" formControlName="titre">
 
 <label for="image">image:</label>
-<input type="text"  [(ngModel)]="nouvelleimage">
+<input type="text"  formControlName="image">
 
 <label for="eval">Nb likes:</label>
-<input type="number"  [value]="nblikes" readonly>
+<input type="text"  formControlName="nblikes">
 
 <label for="dispo">disponible:</label>
-<input type="text" [(ngModel)]="dispo">
+<input type="text" formControlName="disponible">
 
 <label for="date">date:</label>
-<input type="date"  [(ngModel)]="nouvelledate">
+<input type="date"  formControlName="date" >
 
+<div class="p-2 bg-light rounded" formGroupName="details" >
+    <h2><strong>Details</strong></h2>
+    <br>
 <label for="itervenant">intervenant:</label>
-<input type="text"   [(ngModel)]="nouvelintervenant">
+<input type="text"   formControlName="intervenant">
 
 <label for="endroit">endroit:</label>
-<input type="text"   [(ngModel)]="nouvelendroit">
+<input type="text"  formControlName="endroit">
 
 <label for="prerequis">prerequis:</label>
-<input type="text"   [(ngModel)]="nouvelprerequis">
+<input type="text"   formControlName="prerequis">
+</div>
 
-<button (click)="onModifier(this.ancienid)">Modifier l'activité d'id {{ancienid}}</button>
-
+<input type="button" class="btn btn-primary" (click)="onSubmitForm()" value=" Modifier l'activité d'id {{ancienid.value}}"> 
+<input type="button" class="btn btn-danger" (click)="onResetForm()" routerLink="/lesactivites" value="Annuler"> 
+</form>
+</div>

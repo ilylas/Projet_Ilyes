@@ -14,7 +14,6 @@ export class ActiviteService {
   details!:Details[];
   activite!:Activite;
   totalLikes:number=0;
-
   private userHasLiked: boolean = false;
 
   constructor(private http:HttpClient) {}
@@ -39,6 +38,9 @@ export class ActiviteService {
     return this.http.get<Activite>(URL+"/"+id)
   }
 
+  getUneActiviteByDate(date:string):Observable<Activite>{
+    return this.http.get<Activite>(URL+"?date="+date)
+  }
 
   updatenblikesactivite(nblikes:number){
     return nblikes++;
@@ -74,42 +76,12 @@ export class ActiviteService {
     this.activite.comments?.push(newComment);
   }
 
-  // nouvelleActivite!:Activite
-  // ajouterActivite(nouvelleActivite:Activite){
-  //   this.nouvelleActivite=nouvelleActivite
-  //   this.lesactivite.push(nouvelleActivite);
-  // }
-
-  // getnouvelactivite(){
-  //   return this.nouvelleActivite;
-  // }
-
-
   ajouterActivite(nouvelActivite: Activite) {
     console.log('Adding activity:', nouvelActivite);
     this.lesactivite.push(nouvelActivite);
     console.log('Activities after adding:', this.lesactivite);
   }
-
-  // private apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={813cbb57c25fea8e26b42665abcd2200}';
-
-  // getData(): Observable<any> {
-  //   return this.http.get<any>(`${this.apiUrl}/weather`);
-  // }
-
-  // private apiKey = '813cbb57c25fea8e26b42665abcd2200';
-  // private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
-
-  
-  // getWeather(city: string): Observable<any> {
-  //   const url = `${this.apiUrl}?q=${city}&appid=${this.apiKey}`;
-  //   return this.http.get<any>(url);
-  // }
-
   private apiKey = 'b270a900c92cb83e0a4454cd27c060ac';
-  // private apiUrl = 'https://weatherapi-com.p.rapidapi.com/current.json';
-
-  //https://api.openweathermap.org/data/2.5/weather?q={city}&appid={apiKey}
 
   getWeather(city: string){
     return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`);

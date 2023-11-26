@@ -17,8 +17,7 @@
   
   </select>
   <div *ngIf="selectedOption === 'facebook'" >
-    <p><a href="https://www.facebook.com/home.php" >Lien pour Facebook</a></p>
-    <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=#url" >Facebook</a> -->
+    <p><a href="https://www.facebook.com/sharer/sharer.php?u=#url" >Lien pour Facebook</a></p>
   </div>
     <div *ngIf="selectedOption === 'messenger'">
     <p><a href="https://www.messenger.com/?locale=fr_FR">Lien pour Messenger </a></p>
@@ -27,10 +26,26 @@
     <p><a href="https://www.google.com/intl/fr/gmail/about/">Lien pour Gmail</a></p>
 </div>
 </mat-toolbar>
+<div class="body">
+  <div class="menu">
+    
+    <div class="userpart">
+      <div class="user"></div>
+      <a routerLink="/user" class="nav-link">    
+        <div class="usertext">Espace Utilisateur</div>
+      </a>
+    </div>
 
-<div class="">
-  <div class="user"></div><br>
-  <a routerLink="/user" class="nav-link">Espace Utilisateur</a>
-  <div class="admin"></div>
-  <a routerLink="/connexion" class="nav-link">Espace Administrateur</a>
+    <div class="adminpart">
+      <div class="admin"></div><br>
+      <a routerLink="/connexion" class="nav-link">
+        <div class="admintext">Espace Administrateur</div>
+      </a>
+    </div>
+
+  </div>
 </div>
+ 
+
+
+

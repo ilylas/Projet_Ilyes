@@ -36,7 +36,6 @@ body {
     background-color: #e9e9e9;
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -46,4 +45,39 @@ body {
     background-image: url('../../../assets/blur-nature-green-park-with-bokeh-sun-light-abstract-background-copy-space-travel-adventure-environment-concept-vintage-tone-filter-color-style_1253-1107.avif');
     background-size: cover;
     padding-bottom: 50px;
+    padding-top: 100px;
+  }
+
+  .contact{
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 500px;
+    margin-left: 650px;
+    margin-right: 10px;
+    margin-top: 100px;
+    width: 600px;
+    height: 450px;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+
+    /*
+    background-color: white;
+    margin-left: 650px;
+    margin-top: 10px; */
+
+  }
+
+  h2{
+    font-weight: bold;
+    font-size: xxx-large;
+  }
+
+  .titre{
+    text-align: center;
+    font-size: xxx-large;
+    font-style: italic;
+    text-decoration: underline;
+    color: brown;
   }
