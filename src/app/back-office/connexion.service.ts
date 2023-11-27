@@ -9,19 +9,13 @@ const URL = "http://localhost:3000/donnees/1";
 })
 export class ConnexionService  {
   nom:string='ilyes';
-  mdp:string='';
+  
   autentif!:boolean;
   constructor(private http:HttpClient) {}
   
-  public login(name:string,pwd:string){
-    this.getMdpValue().subscribe(
-      (response) => {
-        let mdpValue = response.mdp;
-        this.mdp=mdpValue      
-        console.log(this.mdp)
-      }
-    )
-    if((this.nom===name)&&(this.mdp===pwd)){
+  public login(name:string,pwd:string,jsonpass:string){
+    
+    if((this.nom===name)&&(jsonpass===pwd)){
       localStorage.setItem('state','connected');
       this.autentif=true;
       return true;

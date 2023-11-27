@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConnexionService } from '../connexion.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -9,16 +9,33 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.css']
 })
-export class ConnexionComponent{
-
+export class ConnexionComponent implements OnInit{
+  loginForm!:FormGroup;
   nbtentatives:number=3;
-  
+  mdp!:string;
+  Xnom!:string;
   constructor(private router:Router,private connexionService:ConnexionService,private fb:FormBuilder){}
 
-  loginForm=this.fb.group({
-    name:['',[Validators.required,Validators.pattern('ilyes')]],
-    mdp:['', [Validators.required,Validators.pattern('admin')]],
-  })
+  ngOnInit(): void {
+    this.connexionService.getMdpValue().subscribe(
+      (response) => {
+        console.log(response.nom)
+        let mdpValue = response.mdp;
+        this.mdp=mdpValue;
+        this.Xnom=response.nom;
+        this.loginForm=this.fb.group({
+          name:['ilyes',[Validators.required,Validators.pattern(response.nom)]],
+          mdp:['', [Validators.required,Validators.pattern(this.mdp)]],
+        })
+      }
+    )
+  }
+
+
+  // loginForm=this.fb.group({
+  //   name:['',[Validators.required,Validators.pattern('ilyes')]],
+  //   mdp:[this.mdp, [Validators.required,Validators.pattern(this.mdp)]],
+  // })
 
   public get nom() {
     return this.loginForm.get('name');
@@ -29,7 +46,7 @@ export class ConnexionComponent{
 
 // version 1
   onauthentifier(name:string,pwd:string){
-    this.connexionService.login(name,pwd);
+    this.connexionService.login(name,pwd,this.mdp);
     if(name==""||pwd==""){
       alert('Veuillez entrer vos données de connexion !');
     }
