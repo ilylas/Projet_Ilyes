@@ -13,7 +13,6 @@ export class ConnexionComponent implements OnInit{
   loginForm!:FormGroup;
   nbtentatives:number=3;
   mdp!:string;
-  Xnom!:string;
   constructor(private router:Router,private connexionService:ConnexionService,private fb:FormBuilder){}
 
   ngOnInit(): void {
@@ -22,9 +21,8 @@ export class ConnexionComponent implements OnInit{
         console.log(response.nom)
         let mdpValue = response.mdp;
         this.mdp=mdpValue;
-        this.Xnom=response.nom;
         this.loginForm=this.fb.group({
-          name:['ilyes',[Validators.required,Validators.pattern(response.nom)]],
+          name:['',[Validators.required,Validators.pattern('ilyes')]],
           mdp:['', [Validators.required,Validators.pattern(this.mdp)]],
         })
       }
